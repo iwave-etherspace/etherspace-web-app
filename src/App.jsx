@@ -5,16 +5,16 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./assets/components/HomePage";
 import RegisterPage from "./assets/components/RegisterPage";
+import OtpPage from "./assets/components/OtpPage";
+import RegisterWithPassword from "./assets/components/RegisterWithPassword";
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<RegisterPage />}></Route>
-        </Routes>
-      </div>
-    </Router>
+    <Routes>
+      <Route path="/" element={<RegisterPage />}></Route>
+      <Route path="/otpPage" element={<OtpPage />}></Route>
+      <Route path="/loginWpassword" element={<RegisterWithPassword />}></Route>
+    </Routes>
   );
 }
 
