@@ -6,7 +6,7 @@ import EtherSpaceLogo from './sidebar-components/EtherSpaceLogo'
 
 const SideBar = () => {
   return (
-    <aside className="grid grid-rows-[auto_3fr_auto]">
+    <aside className="grid grid-rows-[auto_3fr_auto] content-center justify-center">
         
         <EtherSpaceLogo/>
 
