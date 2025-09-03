@@ -12,7 +12,7 @@ function Dashboard() {
 
         <DashboardContent/> */}
         <SideBar/>
-        <DashboardContent/>
+        <DashboardContent firstName={"Sharmaine"} lastName={"Kho"} userContact={"+(63) 913 142 5241"} profileImage={"src/assets/imgs/default-avatar-female.png"}/>
 
         {/* <div class="bg-green-500 sm:hidden row-start-1 visible z-10">BBB</div>
         <div class="bg-red-500 sm:block hidden ">AAA</div>
