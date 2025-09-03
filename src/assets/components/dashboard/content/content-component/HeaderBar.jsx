@@ -1,5 +1,5 @@
 import React from 'react'
-import ActionIcon from './ActionIcon'
+import ActionIcon from './headerbar/ActionIcon'
 
 const HeaderBar = () => {
   return (
