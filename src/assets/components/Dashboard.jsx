@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 import SideBar from "./SideBar/SideBar";
-import MainContent from "./MainContent/MainContent";
+import DashboardContent from "./MainContent/DashboardContent";
 
 function Dashboard() {
   return (
@@ -9,7 +9,7 @@ function Dashboard() {
       
       <SideBar/>
 
-      <MainContent/>
+      <DashboardContent/>
 
     </div>
   );
