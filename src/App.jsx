@@ -5,7 +5,7 @@ import HomePage from "./assets/components/HomePage";
 import RegisterPage from "./assets/components/RegisterPage";
 import OtpPage from "./assets/components/OtpPage";
 import AccountSetupPage from "./assets/components/AccountSetupPage";
-import Dashboard from "./assets/components/Dashboard";
+import Dashboard from "./assets/components/dashboard/Dashboard";
 import './assets/styles/dashboard.css'
 
 function App() {

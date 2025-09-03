@@ -1,7 +1,7 @@
 import React from 'react'
-import SectionDivider from './SectionDivider'
-import NavSection from './NavSection'
-import NavButton from './NavButton'
+import SectionDivider from './sidebar-components/SectionDivider'
+import NavSection from './sidebar-components/NavSection'
+import NavButton from './sidebar-components/NavButton'
 
 const SideBar = () => {
   return (

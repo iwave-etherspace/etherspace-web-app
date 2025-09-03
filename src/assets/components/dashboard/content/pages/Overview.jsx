@@ -1,9 +1,10 @@
 import React from 'react'
+import MainContent from '../content-component/MainContent'
 
-const MainContent = () => {
+const Overview = () => {
   return (
-    <div className="main-content">
-        {/* Top Row - Balance and Lottery */}
+    <MainContent>
+          {/* Top Row - Balance and Lottery */}
         <div className="top-row">
             {/* Balance Card */}
             <div className="balance-card">
@@ -280,8 +281,8 @@ const MainContent = () => {
             </div>
         </div>
         </div>
-    </div>
+        </MainContent>
   )
 }
 
-export default MainContent
+export default Overview
