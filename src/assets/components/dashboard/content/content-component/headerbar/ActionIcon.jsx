@@ -5,7 +5,7 @@ const ActionIcon = ({alt,src}) => {
     <img
         src={src}
         alt={alt}
-        className="action-icon"
+        className="w-[33px] h-[33px] cursor-pointer"
     />
   )
 }
