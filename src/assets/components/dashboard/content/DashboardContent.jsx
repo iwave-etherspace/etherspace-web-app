@@ -8,7 +8,7 @@ import Overview from './pages/Overview'
 const DashboardContent = () => {
   return (
     <main className="grid grid-cols-1 grid-rows-[auto_auto_3fr]">
-        <HeaderBar/>
+        <HeaderBar userName={"Sharmaine Kho"} userContact={"+(63) 913 142 5241"} src={"src/assets/imgs/default-avatar-female.png"}/>
         <WelcomeSection/>
         <Overview/>
     </main>
