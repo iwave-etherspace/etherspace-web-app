@@ -12,9 +12,9 @@ const ContentCell = ({cStart,rStart,cSpan,rSpan,children}) => {
     if(typeof(rSpan) == "number"){
         classStr = classStr+" row-span-"+rSpan;
     }
-    //Note: cell-content class applies h-full to all children. See dashboard.css
+    //Note: content-cell class applies h-full to all children. See dashboard.css
     return (
-    <div className={classStr+" cell-content"}>
+    <div className={classStr+" content-cell"}>
         {children}
     </div>
     )

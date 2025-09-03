@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-.cell-content > * {
+.content-cell > * {
     @apply h-full;
 }
 
