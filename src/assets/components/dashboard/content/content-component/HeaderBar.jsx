@@ -2,12 +2,12 @@ import React from 'react'
 
 const HeaderBar = () => {
   return (
-    <header className="header">
-        <div className="header-span-container">
-        <span className="header-span">ETHERSPACE - LOTTOMATIK</span>
+    <header className="flex justify-between items-center gap-4">
+        <div className="flex items-center bg-white rounded-lg flex-1 max-w-full h-full">
+        <span className="ml-5 text-black text-base font-normal leading-5">ETHERSPACE - LOTTOMATIK</span>
         </div>
 
-        <div className="header-actions">
+        <div className="flex items-center gap-4">
         <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/9fbff120a9eeb929ff63384ddae92f39a0c925d7?width=66"
             alt="Mail"

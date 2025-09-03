@@ -7,12 +7,15 @@ import Overview from './pages/Overview'
 
 const DashboardContent = () => {
   return (
-    <main className="dashboard-content">
-        <HeaderBar/>
+    <main className="grid grid-cols-1 grid-rows-[auto_auto_3fr]">
+        {/* <HeaderBar/>
 
         <WelcomeSection/>
 
-        <Overview/>
+        <Overview/> */}
+        <HeaderBar/>
+
+        <div className='bg-red-500'></div>
     </main>
     
    //<main className="main-content"></main>
