@@ -6,8 +6,8 @@ import DashboardContent from "./content/DashboardContent";
 function Dashboard() {
   return (
     //<div className="dashboard-container">
-    <div className="h-screen">
-      <div className="bg-[#F9F9F9] font-['Inter'] m-12 grid grid-cols-[1fr_7fr] gap-4">
+    <div className="h-screen p-12">
+      <div className="h-full bg-[#F9F9F9] font-['Inter'] grid grid-cols-[1fr_7fr] gap-4">
         {/* <SideBar/>
 
         <DashboardContent/> */}
