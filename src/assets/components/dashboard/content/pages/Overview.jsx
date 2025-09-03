@@ -1,78 +1,79 @@
 import React from 'react'
+import MainContent from '../content-component/MainContent'
 
-const DashboardContent = () => {
+const Overview = () => {
   return (
-    <div className="dashboard-content">
-        {/* Top Row - Balance and Lottery */}
+    <MainContent>
+          {/* Top Row - Balance and Lottery */}
         <div className="top-row">
-        {/* Balance Card */}
-        <div className="balance-card">
-            <div className="balance-header">My Balance</div>
-            <div className="balance-amount">₱ 3,027.00</div>
-            <div className="balance-actions">
-            <button className="cash-out-btn">Cash Out</button>
-            <button className="cash-in-btn">Cash In</button>
-            </div>
-        </div>
-
-        {/* Lottery Section */}
-        <div className="lottery-section">
-            <div className="lottery-logos">
-            <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/4df3428e4c8fd3d0349816cecd948786b95c9e98?width=224"
-                alt="Lottery Logo"
-                className="lottery-logo"
-            />
-            <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/147523c5122fad93d89224bdb0fe6500b63d1399?width=224"
-                alt="Lottery Logo"
-                className="lottery-logo"
-            />
-            <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/552f638a4bbb2f0363ddfb6ce8a2b5ed175707f2?width=224"
-                alt="Lottery Logo"
-                className="lottery-logo"
-            />
-            <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/46dff75f6a6c3f080600e258ca4fb7ec83ef8a6f?width=224"
-                alt="Lottery Logo"
-                className="lottery-logo"
-            />
-            <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/1dfd7f317e68e6357d83e6b86c88b73643557bd3?width=224"
-                alt="Lottery Logo"
-                className="lottery-logo"
-            />
+            {/* Balance Card */}
+            <div className="balance-card">
+                <div className="balance-header">My Balance</div>
+                <div className="balance-amount">₱ 3,027.00</div>
+                <div className="balance-actions">
+                <button className="cash-out-btn">Cash Out</button>
+                <button className="cash-in-btn">Cash In</button>
+                </div>
             </div>
 
-            <div className="lottery-draws">
-            <div className="draw-item">
-                <div className="draw-amount">₱103,957,780</div>
-                <div className="draw-date">Sept 1 | 9 PM</div>
-                <div className="draw-label">Draw Date | Time</div>
+            {/* Lottery Section */}
+            <div className="lottery-section">
+                <div className="lottery-logos">
+                <img
+                    src="https://api.builder.io/api/v1/image/assets/TEMP/4df3428e4c8fd3d0349816cecd948786b95c9e98?width=224"
+                    alt="Lottery Logo"
+                    className="lottery-logo"
+                />
+                <img
+                    src="https://api.builder.io/api/v1/image/assets/TEMP/147523c5122fad93d89224bdb0fe6500b63d1399?width=224"
+                    alt="Lottery Logo"
+                    className="lottery-logo"
+                />
+                <img
+                    src="https://api.builder.io/api/v1/image/assets/TEMP/552f638a4bbb2f0363ddfb6ce8a2b5ed175707f2?width=224"
+                    alt="Lottery Logo"
+                    className="lottery-logo"
+                />
+                <img
+                    src="https://api.builder.io/api/v1/image/assets/TEMP/46dff75f6a6c3f080600e258ca4fb7ec83ef8a6f?width=224"
+                    alt="Lottery Logo"
+                    className="lottery-logo"
+                />
+                <img
+                    src="https://api.builder.io/api/v1/image/assets/TEMP/1dfd7f317e68e6357d83e6b86c88b73643557bd3?width=224"
+                    alt="Lottery Logo"
+                    className="lottery-logo"
+                />
+                </div>
+
+                <div className="lottery-draws">
+                <div className="draw-item">
+                    <div className="draw-amount">₱103,957,780</div>
+                    <div className="draw-date">Sept 1 | 9 PM</div>
+                    <div className="draw-label">Draw Date | Time</div>
+                </div>
+                <div className="draw-item">
+                    <div className="draw-amount">₱49, 502, 021</div>
+                    <div className="draw-date">Sept 2 | 9 PM</div>
+                    <div className="draw-label">Draw Date | Time</div>
+                </div>
+                <div className="draw-item">
+                    <div className="draw-amount">₱15, 812, 013</div>
+                    <div className="draw-date">Sept 2 | 9 PM</div>
+                    <div className="draw-label">Draw Date | Time</div>
+                </div>
+                <div className="draw-item">
+                    <div className="draw-amount">₱8, 912, 101</div>
+                    <div className="draw-date">Sept 1 | 9 PM</div>
+                    <div className="draw-label">Draw Date | Time</div>
+                </div>
+                <div className="draw-item">
+                    <div className="draw-amount">₱ 63,729,339</div>
+                    <div className="draw-date">Sept 2 | 9 PM</div>
+                    <div className="draw-label">Draw Date | Time</div>
+                </div>
+                </div>
             </div>
-            <div className="draw-item">
-                <div className="draw-amount">₱49, 502, 021</div>
-                <div className="draw-date">Sept 2 | 9 PM</div>
-                <div className="draw-label">Draw Date | Time</div>
-            </div>
-            <div className="draw-item">
-                <div className="draw-amount">₱15, 812, 013</div>
-                <div className="draw-date">Sept 2 | 9 PM</div>
-                <div className="draw-label">Draw Date | Time</div>
-            </div>
-            <div className="draw-item">
-                <div className="draw-amount">₱8, 912, 101</div>
-                <div className="draw-date">Sept 1 | 9 PM</div>
-                <div className="draw-label">Draw Date | Time</div>
-            </div>
-            <div className="draw-item">
-                <div className="draw-amount">₱ 63,729,339</div>
-                <div className="draw-date">Sept 2 | 9 PM</div>
-                <div className="draw-label">Draw Date | Time</div>
-            </div>
-            </div>
-        </div>
         </div>
 
         {/* Payment History Section */}
@@ -280,8 +281,8 @@ const DashboardContent = () => {
             </div>
         </div>
         </div>
-    </div>
+        </MainContent>
   )
 }
 
-export default DashboardContent
+export default Overview
