@@ -33,7 +33,7 @@ const RegisterPage = () => {
             <input
               type="number"
               placeholder="Mobile Number"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
             />
             <button
               className="w-full px-4 py-2 bg-blue-900 text-white rounded-lg shadow 

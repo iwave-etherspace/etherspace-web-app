@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./assets/components/HomePage";
 import RegisterPage from "./assets/components/RegisterPage";
 import OtpPage from "./assets/components/OtpPage";
-import RegisterWithPassword from "./assets/components/RegisterWithPassword";
+import RegisterWithPassword from "./assets/components/RegisterWithPasswordPage";
+import AccountSetupPage from "./assets/components/AccountSetupPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/" element={<RegisterPage />}></Route>
       <Route path="/otpPage" element={<OtpPage />}></Route>
       <Route path="/loginWpassword" element={<RegisterWithPassword />}></Route>
+      <Route path="/accountSetupPage" element={<AccountSetupPage />}></Route>
     </Routes>
   );
 }
