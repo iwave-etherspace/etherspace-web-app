@@ -278,9 +278,7 @@
 
 /* Balance Card */
 .balance-card {
-    grid-column: 1;
-    grid-row: 1;
-    height: 232px;
+    height: 100%;
     background: linear-gradient(106deg, #BF5E3C 7.76%, #3F191B 84.82%);
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);

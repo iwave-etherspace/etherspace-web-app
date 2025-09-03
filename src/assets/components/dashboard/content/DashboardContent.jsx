@@ -16,7 +16,7 @@ const DashboardContent = () => {
         <HeaderBar/>
         <WelcomeSection/>
 
-        <div className='bg-red-500'></div>
+        <Overview/>
     </main>
     
    //<main className="main-content"></main>
