@@ -3,13 +3,8 @@ import React from 'react'
 const HeaderBar = () => {
   return (
     <header className="header">
-        <div className="search-container">
-        <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/4637b2cdbcdb1c30b289568f673a8f080ee0d4f1?width=46"
-            alt="Search"
-            className="search-icon"
-        />
-        <span className="search-placeholder">Search something</span>
+        <div className="header-span-container">
+        <span className="header-span">ETHERSPACE - LOTTOMATIK</span>
         </div>
 
         <div className="header-actions">

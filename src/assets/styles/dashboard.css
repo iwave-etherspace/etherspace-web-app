@@ -150,7 +150,7 @@
     /* margin-bottom: 32px; */
 }
 
-.search-container {
+.header-span-container {
     display: flex;
     align-items: center;
     background: #fff;
@@ -168,10 +168,10 @@
     margin-right: 14px;
 }
 
-.search-placeholder {
-    color: rgba(0, 0, 0, 0.5);
+.header-span {
+    color: rgba(0, 0, 0, 1);
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 20px;
 }
 
@@ -731,7 +731,7 @@
     padding: 16px;
     }
 
-    .search-container {
+    .header-span-container {
     padding: 20px 30px 20px 20px;
     }
 
