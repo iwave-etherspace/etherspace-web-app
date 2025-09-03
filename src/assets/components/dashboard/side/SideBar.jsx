@@ -27,7 +27,7 @@ const SideBar = () => {
             </NavSection>
         </div>
 
-        <div className="powered-by">powered by: etherspace</div>
+        <div className="text-[#091237] text-[10px] font-normal leading-5 self-end">powered by: etherspace</div>
     </aside>
   )
 }
