@@ -1,3 +1,10 @@
+@import "tailwindcss";
+
+.action-icon {
+    @apply w-[33px] h-[33px] cursor-pointer;
+}
+
+
 .dashboard-container {
     /* width: 100vw;
     height: 100vh; */
@@ -181,11 +188,7 @@
     gap: 16px;
 }
 
-.action-icon {
-    width: 33px;
-    height: 33px;
-    cursor: pointer;
-}
+
 
 .user-profile {
     display: flex;

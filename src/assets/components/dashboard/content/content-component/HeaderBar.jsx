@@ -1,4 +1,5 @@
 import React from 'react'
+import ActionIcon from './ActionIcon'
 
 const HeaderBar = () => {
   return (
@@ -8,16 +9,8 @@ const HeaderBar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-        <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/9fbff120a9eeb929ff63384ddae92f39a0c925d7?width=66"
-            alt="Mail"
-            className="action-icon"
-        />
-        <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/0d1e44ba6c7e5dd18fc9ebe508a33feb2d609573?width=60"
-            alt="Notifications"
-            className="action-icon"
-        />
+          <ActionIcon alt="Mail" src="src/assets/imgs/mail.png"/>
+          <ActionIcon alt="Notifications" src="src/assets/imgs/bell.png"/>
 
         <div className="user-profile">
             <img
