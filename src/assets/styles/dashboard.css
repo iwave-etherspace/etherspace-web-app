@@ -693,7 +693,7 @@
 }
 
 /* Media Queries */
-@media (max-width: 1400px) {
+/* @media (max-width: 1400px) {
     .main-content {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
@@ -798,4 +798,4 @@
     .table-cell:nth-child(n+4) {
     display: none;
     }
-}
+} */
