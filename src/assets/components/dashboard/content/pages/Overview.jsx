@@ -1,24 +1,25 @@
 import React from 'react'
 import MainContent from '../content-component/MainContent'
+import ContentCell from '../content-component/maincontent/ContentCell'
 
 const Overview = () => {
   return (
     <MainContent>
         <div className="h-full grid grid-cols-3 grid-rows-[1fr_2fr] content-start gap-4">
             
-            <div className='col-start1 row-start-1 col-span-1 row-span-1'>
-                <div className="h-full balance-card">
+            <ContentCell cStart={1} rStart={1} cSpan={1} rSpan={1}>
+                <div className="balance-card">
                     <div className="balance-header">My Balance</div>
                     <div className="balance-amount">₱ 3,027.00</div>
                     <div className="balance-actions">
-                    <button className="cash-out-btn">Cash Out</button>
-                    <button className="cash-in-btn">Cash In</button>
+                        <button className="cash-out-btn">Cash Out</button>
+                        <button className="cash-in-btn">Cash In</button>
                     </div>
                 </div>
-            </div>
+            </ContentCell>
 
-            <div className='col-span-2'>
-                <div className="h-full lottery-section">
+            <ContentCell cSpan={2}>
+                <div className="lottery-section">
                     <div className="lottery-logos">
                     <img
                         src="https://api.builder.io/api/v1/image/assets/TEMP/4df3428e4c8fd3d0349816cecd948786b95c9e98?width=224"
@@ -75,10 +76,10 @@ const Overview = () => {
                     </div>
                     </div>
                 </div>
-            </div>
+            </ContentCell>
 
-            <div className='col-span-2'>
-                <div className="h-full payment-history-card">
+            <ContentCell cSpan={2}>
+                <div className="payment-history-card">
                 <div className="card-header">
                 <h3 className="card-title">Payment History</h3>
                 <span className="period-label">This Week</span>
@@ -171,10 +172,10 @@ const Overview = () => {
                     </div>
                     </div>
                 </div>
-            </div>
+            </ContentCell>
             
-            <div className='col-span-1'>
-                <div className="h-full balance-history-card">
+            <ContentCell cSpan={1}>
+                <div className="balance-history-card">
             <h3 className="card-title">Balance History</h3>
 
             <div className="balance-history-header">
@@ -281,7 +282,7 @@ const Overview = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </ContentCell>
 
         </div>
     </MainContent>
