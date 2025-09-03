@@ -8,18 +8,10 @@ import Overview from './pages/Overview'
 const DashboardContent = () => {
   return (
     <main className="grid grid-cols-1 grid-rows-[auto_auto_3fr]">
-        {/* <HeaderBar/>
-
-        <WelcomeSection/>
-
-        <Overview/> */}
         <HeaderBar/>
         <WelcomeSection/>
-
         <Overview/>
     </main>
-    
-   //<main className="main-content"></main>
   )
 }
 
