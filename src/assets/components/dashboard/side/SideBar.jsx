@@ -9,7 +9,7 @@ const SideBar = () => {
     <aside className="grid grid-rows-[auto_3fr_auto] content-center justify-center">
         
         <EtherSpaceLogo/>
-
+        <NavSection label="Menu"></NavSection>
         {/* <div className="flex flex-col gap-4">
             <NavSection label="Menu">
                 <NavButton label="Overview" iconIdx={true} isActive={true}/>

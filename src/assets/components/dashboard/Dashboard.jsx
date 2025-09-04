@@ -12,7 +12,7 @@ function Dashboard() {
       </div>
     </div> */
 
-    <div className="h-dvh border-[1rem] border-amber-500 grid grid-cols-[7rem_7fr] grid-rows-[1fr_auto] gap-4">
+    <div className="h-dvh border-[1rem] border-amber-500 grid grid-cols-[10rem_7fr] grid-rows-[1fr_auto] gap-4">
       <div className="col-start-1">
         <SideBar/>
       </div>

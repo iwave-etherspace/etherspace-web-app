@@ -4,6 +4,10 @@
     @apply h-full;
 }
 
+.nav-radio-button-label {
+    
+}
+
 .nav-item {
     display: flex;
     width: 180px;
