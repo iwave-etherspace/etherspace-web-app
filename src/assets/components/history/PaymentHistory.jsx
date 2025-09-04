@@ -1,35 +1,22 @@
 import React, { useState, useMemo } from "react";
-
 const sampleData7 = [
   {
-    id: 1,
-    name: "John Doe",
-    email: "john@example.com",
-    role: "Admin",
-    status: "Active",
-    department: "Finance",
-    location: "Manila",
+    id: 1244235,
+    amount: "₱100",
+    dateOfPayment: "Aug 15, 2025",
+    game: "6/45",
+    drawDate: "Aug 19, 2025",
+    status: "Successful",
   },
   {
-    id: 2,
-    name: "Jane Smith",
-    email: "jane@example.com",
-    role: "Editor",
-    status: "Inactive",
-    department: "Marketing",
-    location: "Cebu",
-  },
-  {
-    id: 3,
-    name: "Alice Johnson",
-    email: "alice@example.com",
-    role: "Viewer",
-    status: "Active",
-    department: "IT",
-    location: "Davao",
+    id: 1244236,
+    amount: "₱200",
+    dateOfPayment: "Aug 12, 2025",
+    game: "6/49",
+    drawDate: "Aug 17, 2025",
+    status: "Failed",
   },
 ];
-
 export default function PaymentHistory() {
   const [query, setQuery] = useState("");
 
@@ -68,18 +55,18 @@ export default function PaymentHistory() {
         />
       </div>
 
-      {/* Table */}
-      <div className="bg-white rounded-lg shadow-sm overflow-x-auto font-sans text-center ">
-        <table className="min-w-full table-auto text-gray-400 text-xs">
+      {/* ✅ Medium+ screens: Table Layout */}
+      <div className="hidden md:block bg-white rounded-lg shadow-sm overflow-x-auto font-sans text-center">
+        <table className="min-w-full table-auto">
           <thead>
-            <tr>
-              <th className="px-4 py-3  text-wrap">Payment Reference No.</th>
+            <tr className="text-xs text-gray-400  text-center">
+              <th className="px-4 py-3">Reference No.</th>
               <th className="px-4 py-3">Amount</th>
               <th className="px-4 py-3">Date of Payment</th>
               <th className="px-4 py-3">Game</th>
               <th className="px-4 py-3">Draw Date</th>
               <th className="px-4 py-3">Status</th>
-              <th className="px-4 py-3">Ticket</th>
+              <th className="px-4 py-3 text-right">Action</th>
             </tr>
           </thead>
 
@@ -95,21 +82,18 @@ export default function PaymentHistory() {
               </tr>
             ) : (
               filtered.map((row) => (
-                <tr key={row.id} className="hover:bg-gray-50">
-                  <td className="px-4 py-3 text-sm text-gray-700">{row.id}</td>
-                  <td className="px-4 py-3 text-sm text-gray-800">
-                    {row.name}
+                <tr key={row.id} className="hover:bg-gray-50 text-sm">
+                  <td className="px-4 py-3 text-gray-700 font-medium">
+                    {row.id}
                   </td>
-                  <td className="px-4 py-3 text-sm text-gray-600">
-                    {row.email}
-                  </td>
-                  <td className="px-4 py-3 text-sm text-gray-700">
-                    {row.role}
-                  </td>
-                  <td className="px-4 py-3 text-sm">
+                  <td className="px-4 py-3">{row.amount}</td>
+                  <td className="px-4 py-3">{row.dateOfPayment}</td>
+                  <td className="px-4 py-3">{row.game}</td>
+                  <td className="px-4 py-3">{row.drawDate}</td>
+                  <td className="px-4 py-3">
                     <span
-                      className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
-                        row.status === "Active"
+                      className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        row.status === "Successful"
                           ? "bg-green-100 text-green-700"
                           : "bg-red-100 text-red-700"
                       }`}
@@ -117,17 +101,68 @@ export default function PaymentHistory() {
                       {row.status}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-sm text-gray-700">
-                    {row.department}
-                  </td>
-                  <td className="px-4 py-3 text-sm text-gray-700">
-                    {row.location}
+                  <td className="px-4 py-3 text-right">
+                    <button className="px-3 py-1 rounded-md bg-green-100 text-green-700 hover:bg-green-200 text-xs font-medium">
+                      View
+                    </button>
                   </td>
                 </tr>
               ))
             )}
           </tbody>
         </table>
+      </div>
+
+      {/* Mobile card view */}
+      <div className="md:hidden space-y-4 font-sans">
+        {filtered.length === 0 ? (
+          <p className="text-center text-sm text-gray-500">No results found.</p>
+        ) : (
+          filtered.map((row) => (
+            <div
+              key={row.id}
+              className="bg-white border border-gray-200 shadow rounded-lg p-4 space-y-3"
+            >
+              {/* Header Row */}
+              <div className="flex justify-between items-center">
+                <p className="text-xs text-gray-400">Reference no.</p>
+                <span
+                  className={`text-sm font-semibold ${
+                    row.status === "Active" ? "text-green-600" : "text-red-600"
+                  }`}
+                >
+                  {row.status === "Active" ? "Successful" : "Failed"}
+                </span>
+              </div>
+              <p className="text-lg font-bold text-gray-800">{row.id}</p>
+
+              {/* Details */}
+              <div className="divide-y divide-gray-100 text-sm">
+                <div className="flex justify-between py-2">
+                  <span className="text-gray-600">Amount</span>
+                  <span className="font-medium">₱ 100</span>
+                </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-gray-600">Date of Payment</span>
+                  <span className="font-medium">{row.email}</span>
+                </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-gray-600">Game</span>
+                  <span className="font-medium">{row.role}</span>
+                </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-gray-600">Draw Date</span>
+                  <span className="font-medium">{row.department}</span>
+                </div>
+              </div>
+
+              {/* Button */}
+              <button className="w-full bg-green-100 text-green-700 font-medium py-2 rounded-full mt-3 hover:bg-green-200">
+                View
+              </button>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
