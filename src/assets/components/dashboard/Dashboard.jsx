@@ -12,12 +12,16 @@ function Dashboard() {
       </div>
     </div> */
 
-    <div className="h-dvh border-[1rem] border-amber-500 grid grid-cols-[5rem_7fr] grid-rows-2 gap-4">
-      <SideBar/>
+    <div className="h-dvh border-[1rem] border-amber-500 grid grid-cols-[7rem_7fr] grid-rows-[1fr_auto] gap-4">
+      <div className="col-start-1">
+        <SideBar/>
+      </div>
       <div>
         AAA
       </div>
-      <div className="row-start-2 col-span-2 text-[#091237] text-[0.4rem] font-normal leading-5 self-end">powered by: etherspace</div>
+      <div className="row-start-2 col-span-2 ">
+        <div className="text-[#091237] text-[0.4rem] font-normal leading-5 self-end">powered by: etherspace</div>
+      </div>
     </div>
   );
 }
