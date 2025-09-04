@@ -6,18 +6,23 @@ import RegisterPage from "./assets/components/RegisterPage";
 import OtpPage from "./assets/components/OtpPage";
 import AccountSetupPage from "./assets/components/AccountSetupPage";
 import Dashboard from "./assets/components/dashboard/Dashboard";
-import './assets/styles/dashboard.css'
+import "./assets/styles/dashboard.css";
+import HistoryPage from "./assets/components/history/HistoryPage";
+import RegisterWithPasswordPage from "./assets/components/RegisterWithPasswordPage";
 
 function App() {
   return (
-    /*<Routes>
+    <Routes>
       <Route path="/" element={<RegisterPage />}></Route>
       <Route path="/otpPage" element={<OtpPage />}></Route>
-      <Route path="/loginWpassword" element={<RegisterWithPassword />}></Route>
+      <Route
+        path="/loginWpassword"
+        element={<RegisterWithPasswordPage />}
+      ></Route>
       <Route path="/accountSetupPage" element={<AccountSetupPage />}></Route>
+      <Route path="/historyPage" element={<HistoryPage />}></Route>
+      <Route path="/dashboard" element={<Dashboard />}></Route>
     </Routes>
-    */
-   <Dashboard/>
   );
 }
 
