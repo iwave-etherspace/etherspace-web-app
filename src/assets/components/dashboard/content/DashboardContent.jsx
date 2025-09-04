@@ -5,17 +5,13 @@ import MainContent from './content-component/MainContent'
 import Overview from './pages/Overview'
 
 
-const DashboardContent = () => {
+const DashboardContent = ({firstName,lastName,userContact,profileImage}) => {
   return (
-    <main className="dashboard-content">
-        <HeaderBar/>
-
-        <WelcomeSection/>
-
+    <main className="grid grid-cols-1 grid-rows-[auto_auto_3fr]">
+        <HeaderBar userName={firstName+" "+lastName} userContact={userContact} src={profileImage}/>
+        <WelcomeSection firstName={firstName}/>
         <Overview/>
     </main>
-    
-   //<main className="main-content"></main>
   )
 }
 

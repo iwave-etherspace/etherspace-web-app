@@ -1,40 +1,18 @@
 import React from 'react'
+import ActionIcon from './headerbar/ActionIcon'
+import UserProfileIcon from './headerbar/UserProfileIcon'
 
-const HeaderBar = () => {
+const HeaderBar = ({userName,userContact,src}) => {
   return (
-    <header className="header">
-        <div className="search-container">
-        <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/4637b2cdbcdb1c30b289568f673a8f080ee0d4f1?width=46"
-            alt="Search"
-            className="search-icon"
-        />
-        <span className="search-placeholder">Search something</span>
+    <header className="flex justify-between items-center gap-4">
+        <div className="flex items-center bg-white rounded-lg flex-1 max-w-full h-full">
+        <span className="ml-5 text-black text-base font-normal leading-5">ETHERSPACE - LOTTOMATIK</span>
         </div>
 
-        <div className="header-actions">
-        <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/9fbff120a9eeb929ff63384ddae92f39a0c925d7?width=66"
-            alt="Mail"
-            className="action-icon"
-        />
-        <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/0d1e44ba6c7e5dd18fc9ebe508a33feb2d609573?width=60"
-            alt="Notifications"
-            className="action-icon"
-        />
-
-        <div className="user-profile">
-            <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/9443d5aaaf6b105f50176c4d45f85baee5b60888?width=90"
-            alt="User"
-            className="user-avatar"
-            />
-            <div className="user-info">
-            <div className="user-name">Sharmaine Kho</div>
-            <div className="user-contact">+(63) 913 142 5241</div>
-            </div>
-        </div>
+        <div className="flex items-center gap-4">
+          <ActionIcon alt="Mail" src="src/assets/imgs/mail.png"/>
+          <ActionIcon alt="Notifications" src="src/assets/imgs/bell.png"/>
+          <UserProfileIcon userName={userName} userContact={userContact} src={src}/>
         </div>
     </header>
   )

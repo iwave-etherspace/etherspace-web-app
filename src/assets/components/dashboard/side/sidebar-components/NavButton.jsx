@@ -11,8 +11,8 @@ const NavButton = ({label,iconIdx,isActive}) => {
             <div className="nav-icon-wrapper">
                 <svg
                     className="overview-icon"
-                    width="20"
-                    height="21"
+                    width="10"
+                    height="10"
                     viewBox="0 0 20 21"
                     fill="none"
                 >
