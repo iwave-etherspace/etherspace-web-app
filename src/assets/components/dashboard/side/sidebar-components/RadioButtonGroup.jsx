@@ -10,7 +10,7 @@ const RadioButtonGroup = ({activeContentState,group,label,children}) => {
   });
   return (
     <>
-      <div className="text-[rgba(0,0,0,0.4)] text-xs font-normal">{label}</div>
+      <div className="text-[rgba(0,0,0,0.4)] text-xs font-normal mb-3">{label}</div>
         {childrenWithProperties}
       
     </>
