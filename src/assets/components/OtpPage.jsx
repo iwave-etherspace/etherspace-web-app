@@ -31,7 +31,7 @@ const OtpPage = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 h-screen">
       {/* Left Side - Form */}
-      <div className="col-span-2 flex justify-center items-center bg-white p-6">
+      <div className="col-span-2 flex justify-center items-center bg-white p-6 mb-15">
         <div className="text-center w-full max-w-sm">
           <p className="text-2xl font-bold font-sans text-black">
             Input OTP Code
