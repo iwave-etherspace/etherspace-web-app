@@ -13,16 +13,16 @@ const RegisterWithPassword = () => {
     <div className="grid grid-cols-1 lg:grid-cols-3 h-screen">
       {/* Left Side - Form */}
       <div className="col-span-2 flex justify-center items-center bg-white p-6">
-        <div className="text-center w-full max-w-sm">
+        <div className="text-center w-full max-w-xs mb-18">
           <img
             src={LogoColored}
             alt="EtherSpace Logo"
-            className="w-30  mb-4 ml-32"
+            className="w-33  mb-4 ml-22"
           />
-          <p className="text-2xl font-bold font-sans text-black">
-            Welcome to EtherSpace!
+          <p className="text-xl font-bold font-sans text-black">
+            Welcome back to EtherSpace!
           </p>
-          <p className="mb-8 mt-2 text-gray-700">
+          <p className="mb-8 mt-2 text-gray-700 text-sm">
             Please enter your mobile number to Log in and set up your account
           </p>
 

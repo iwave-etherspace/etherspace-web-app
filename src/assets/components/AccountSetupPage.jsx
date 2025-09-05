@@ -93,7 +93,7 @@ const AccountSetupPage = () => {
                   onChange={(d) => setDate(d)}
                   placeholderText="DD/MM/YY"
                   dateFormat="dd/MM/yy"
-                  className="bg-gray-100 rounded-lg p-2 lg:w-170 w-100 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                  className="w-full bg-gray-100 rounded-lg p-2 lg:w-170 w-100 focus:outline-none focus:ring-2 focus:ring-gray-500"
                 />
               </div>
             </div>
