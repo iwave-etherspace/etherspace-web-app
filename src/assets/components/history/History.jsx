@@ -1,7 +1,6 @@
 import React from "react";
 import SideBar from "../dashboard/side/SideBar";
 import BalanceHistory from "./content/BalanceHistory";
-import PaymentHistory from "./content/PaymentHistory";
 import HistoryContent from "./HistoryContent";
 
 export default function History() {
@@ -10,13 +9,12 @@ export default function History() {
       <div className="bg-[#F9F9F9] font-['Inter'] grid grid-cols-[1fr_7fr] gap-4">
         {/* Sidebar always takes the first column */}
         <SideBar />
-
-        {/* Main content column */}
-        <div className="flex flex-col gap-6">
-          <HistoryContent />
-          <BalanceHistory />
-          <PaymentHistory />
-        </div>
+        <HistoryContent
+          firstName={"Sharmaine"}
+          lastName={"Kho"}
+          userContact={"+(63) 913 142 5241"}
+          profileImage={"src/assets/imgs/default-avatar-female.png"}
+        />
       </div>
     </div>
   );
