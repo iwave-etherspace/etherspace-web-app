@@ -1,33 +1,34 @@
 import React, { useState, useMemo } from "react";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 
 const sampleData = [
   {
-    id: 1,
-    name: "John Doe",
-    email: "john@example.com",
-    role: "Admin",
-    status: "Active",
+    activity: "etap",
+    refNo: 12345,
+    amount: "₱100",
+    modeOfPayment: "Cash",
+    status: "Success",
   },
   {
-    id: 2,
-    name: "Jane Smith",
-    email: "jane@example.com",
-    role: "Editor",
-    status: "Inactive",
+    activity: "etap",
+    refNo: 12345,
+    amount: "₱100",
+    modeOfPayment: "E-Payment",
+    status: "Pending",
   },
   {
-    id: 3,
-    name: "Alice Johnson",
-    email: "alice@example.com",
-    role: "Viewer",
-    status: "Active",
+    activity: "etap",
+    refNo: 12345,
+    amount: "₱100",
+    modeOfPayment: "Cash",
+    status: "Success",
   },
   {
-    id: 4,
-    name: "Bob Lee",
-    email: "bob@example.com",
-    role: "Editor",
-    status: "Active",
+    activity: "etap",
+    refNo: 12345,
+    amount: "₱100",
+    modeOfPayment: "Cash",
+    status: "Success",
   },
 ];
 
@@ -38,28 +39,34 @@ export default function BalanceHistory() {
     const q = query.trim().toLowerCase();
     if (!q) return sampleData;
     return sampleData.filter((row) =>
-      [row.name, row.email, row.role, row.status, String(row.id)].some((val) =>
-        val.toLowerCase().includes(q)
-      )
+      [
+        row.refNo,
+        row.amount,
+        row.modeOfPayment,
+        row.status,
+        String(row.activity),
+      ].some((val) => val.toLowerCase().includes(q))
     );
   }, [query]);
 
   return (
-    <div className="w-full max-w-full">
+    <div className="w-full max-w-full ml-7">
       {/* Header */}
       <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
         <h2 className="text-lg font-semibold text-gray-800 font-sans">
           Balance History
         </h2>
-
-        <input
-          type="search"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search..."
-          className="px-3 py-2 w-64 rounded-md bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200"
-          aria-label="Search table"
-        />
+        <div className="relative w-64 mt-5">
+          <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search something"
+            className="font-sans pl-10 pr-3 py-2 w-full rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            aria-label="Search table"
+          />
+        </div>
       </div>
 
       {/* Table for medium+ screens */}
@@ -67,7 +74,7 @@ export default function BalanceHistory() {
         <div className="bg-white rounded-lg shadow-sm font-sans text-center text-gray-400 text-xs">
           <table className="min-w-full w-full table-auto">
             <thead>
-              <tr className="text-gray-600 text-xs md:text-sm">
+              <tr className="text-gray-400 text-xs md:text-xs">
                 <th className="px-4 py-3">Activity</th>
                 <th className="px-4 py-3">Payment Reference No.</th>
                 <th className="px-4 py-3">Cash in/out</th>
@@ -88,23 +95,26 @@ export default function BalanceHistory() {
                 </tr>
               ) : (
                 filtered.map((row) => (
-                  <tr key={row.id} className="hover:bg-gray-50">
-                    <td className="px-4 py-3 text-sm text-gray-700">
-                      {row.id}
+                  <tr
+                    key={row.activity}
+                    className="odd:bg-white even:bg-gray-50"
+                  >
+                    <td className="px-4 py-3 text-sm text-gray-900">
+                      {row.activity}
                     </td>
-                    <td className="px-4 py-3 text-sm text-gray-800">
-                      {row.name}
+                    <td className="px-4 py-3 text-sm text-gray-900">
+                      {row.refNo}
                     </td>
-                    <td className="px-4 py-3 text-sm text-gray-600">
-                      {row.email}
+                    <td className="px-4 py-3 text-sm text-gray-900">
+                      {row.amount}
                     </td>
-                    <td className="px-4 py-3 text-sm text-gray-700">
-                      {row.role}
+                    <td className="px-4 py-3 text-sm text-gray-900">
+                      {row.modeOfPayment}
                     </td>
                     <td className="px-4 py-3 text-sm">
                       <span
                         className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
-                          row.status === "Active"
+                          row.status === "Success"
                             ? "bg-green-100 text-green-700"
                             : "bg-red-100 text-red-700"
                         }`}
@@ -127,34 +137,34 @@ export default function BalanceHistory() {
         ) : (
           filtered.map((row) => (
             <div
-              key={row.id}
-              className="bg-white shadow-sm rounded-lg p-4 space-y-2 text-sm"
+              key={row.activity}
+              className="divide-y divide-gray-100  bg-white shadow-sm rounded-lg p-4 space-y-2 text-sm"
             >
               <div className="flex justify-between">
                 <span className="font-medium text-gray-600">Activity</span>
-                <span className="text-gray-800">{row.id}</span>
+                <span className="text-gray-800">{row.activity}</span>
               </div>
               <div className="flex justify-between">
                 <span className="font-medium text-gray-600">
                   Payment Ref No.
                 </span>
-                <span className="text-gray-800">{row.name}</span>
+                <span className="text-gray-800">{row.refNo}</span>
               </div>
               <div className="flex justify-between">
                 <span className="font-medium text-gray-600">Cash in/out</span>
-                <span className="text-gray-800">{row.email}</span>
+                <span className="text-gray-800">{row.amount}</span>
               </div>
               <div className="flex justify-between">
                 <span className="font-medium text-gray-600">
                   Mode of Payment
                 </span>
-                <span className="text-gray-800">{row.role}</span>
+                <span className="text-gray-800">{row.modeOfPayment}</span>
               </div>
               <div className="flex justify-between">
                 <span className="font-medium text-gray-600">Status</span>
                 <span
                   className={`px-2 py-1 rounded-full text-xs font-medium ${
-                    row.status === "Active"
+                    row.status === "Success"
                       ? "bg-green-100 text-green-700"
                       : "bg-red-100 text-red-700"
                   }`}
