@@ -1,10 +1,12 @@
 import React from 'react'
 
-const RadioButton = ({group,value,children}) => {
-    const actualId = group+value
+const RadioButton = ({activeContentState,group,value,children}) => {
+  let activeContent = activeContentState[0];
+  let setActiveContent = activeContentState[1];
+  const actualId = group+value;
   return (
     <div className ="w-full">
-        <input type="radio" name={group} value={value} id={actualId} className="hidden peer"/>
+        <input type="radio" checked={value === activeContent} onChange={e => setActiveContent(e.target.value)} name={group} value={value} id={actualId} className="hidden peer"/>
         <label htmlFor={actualId} className="
                 flex 
               bg-white

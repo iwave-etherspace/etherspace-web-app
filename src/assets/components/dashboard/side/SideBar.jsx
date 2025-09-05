@@ -4,13 +4,13 @@ import NavSection from './sidebar-components/NavSection'
 import NavButton from './sidebar-components/NavButton'
 import EtherSpaceLogo from './sidebar-components/EtherSpaceLogo'
 
-const SideBar = () => {
+const SideBar = ({activeContentState}) => {
   return (
     <aside className="grid grid-rows-[auto_3fr_auto] content-center justify-center">
         
         <EtherSpaceLogo/>
 
-        <NavSection/>
+        <NavSection activeContentState={activeContentState}/>
 
     </aside>
   )

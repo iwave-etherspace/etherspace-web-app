@@ -1,8 +1,8 @@
 import React from "react";
 import HeaderBar from "../dashboard/content/content-component/HeaderBar";
 import WelcomeSection from "../dashboard/content/content-component/WelcomeSection";
-import PaymentHistory from "./content/PaymentHistory";
-import BalanceHistory from "./content/BalanceHistory";
+import PaymentHistory from "../dashboard/content/pages/history/PaymentHistory";
+import BalanceHistory from "../dashboard/content/pages/history/BalanceHistory";
 
 const HistoryContent = ({ firstName, lastName, userContact, profileImage }) => {
   return (
