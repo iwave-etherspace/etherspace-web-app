@@ -4,7 +4,7 @@ const RadioButton = ({group,value,children}) => {
     const actualId = group+value
   return (
     <div className ="w-full">
-        <input type="radio" name={group} value={value} id={actualId} class="hidden peer"/>
+        <input type="radio" name={group} value={value} id={actualId} className="hidden peer"/>
         <label htmlFor={actualId} className="
                 flex 
               bg-white
