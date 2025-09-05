@@ -1,16 +1,51 @@
 import React from 'react'
 import SectionDivider from './sidebar-components/SectionDivider'
-import NavSection from './sidebar-components/NavSection'
-import NavButton from './sidebar-components/NavButton'
+
 import EtherSpaceLogo from './sidebar-components/EtherSpaceLogo'
+import RadioButtonGroup from './sidebar-components/RadioButtonGroup'
+import RadioButton from './sidebar-components/RadioButton'
 
 const SideBar = ({activeContentState}) => {
+  const group = "navigation";
   return (
     <aside className="grid grid-rows-[auto_3fr_auto] content-center justify-center">
         
         <EtherSpaceLogo/>
 
-        <NavSection activeContentState={activeContentState}/>
+        <nav className="grid grid-cols-1 place-items-start">
+
+          <SectionDivider/>
+
+          <RadioButtonGroup activeContentState={activeContentState} group={group} label={"Menu"}>
+            <RadioButton value={"Overview"}>
+              <svg  className ="mb-[-0.2em]" width="1em" height="1em" viewBox="0 0 97 97" xmlns="http://www.w3.org/2000/svg">
+                <path d="M35.7031 43.2121C36.259 42.8912 36.7206 42.4295 37.0415 41.8735C37.3625 41.3175 37.5313 40.6869 37.5312 40.0449V7.13867C37.5279 6.55575 37.3853 5.98206 37.1153 5.46544C36.8453 4.94883 36.4556 4.50427 35.9789 4.16884C35.5021 3.83341 34.9521 3.61684 34.3746 3.53718C33.7971 3.45753 33.209 3.5171 32.6592 3.71094C21.9875 7.48791 13.0129 14.9477 7.34892 24.7493C1.68493 34.5509 -0.297023 46.0515 1.75935 57.1836C1.86594 57.7593 2.10921 58.3009 2.46869 58.763C2.82817 59.2251 3.29336 59.5941 3.82513 59.8389C4.30435 60.063 4.82716 60.1785 5.35619 60.1771C5.99792 60.1774 6.62841 60.0087 7.18431 59.6881L35.7031 43.2121ZM30.2187 12.6779V37.9334L8.33603 50.5612C8.28119 49.8711 8.28119 49.1764 8.28119 48.5C8.28767 41.0886 10.3392 33.8227 14.2098 27.5023C18.0804 21.182 23.62 16.0522 30.2187 12.6779ZM96.0312 48.5C96.0348 58.9346 92.6046 69.0805 86.2699 77.3721C79.9352 85.6638 71.0479 91.6406 60.9794 94.3802C50.9109 97.1198 40.2206 96.4701 30.5579 92.5313C20.8953 88.5924 12.7973 81.5834 7.51337 72.5855C7.26706 72.1699 7.10555 71.7096 7.03818 71.2312C6.97082 70.7528 6.99893 70.2658 7.1209 69.7984C7.24286 69.3309 7.45627 68.8922 7.74877 68.5077C8.04128 68.1232 8.40708 67.8005 8.82505 67.5582L44.8437 46.5942V4.625C44.8437 3.6553 45.2289 2.72532 45.9146 2.03964C46.6003 1.35396 47.5302 0.96875 48.4999 0.96875C56.7945 0.972982 64.9436 3.14666 72.1384 7.27398C79.3331 11.4013 85.3232 17.3387 89.5139 24.4967C89.5642 24.5698 89.6099 24.643 89.6556 24.7207C89.7013 24.7984 89.747 24.8898 89.7881 24.972C93.8892 32.1345 96.0417 40.2466 96.0312 48.5Z"/>
+              </svg>
+            </RadioButton>
+            <RadioButton value={"History"}>
+              <svg className ="mb-[-0.2em]" width="1em" height="1em" viewBox="0 0 86 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" d="M26.7143 81.2222H59.2857M26.7143 64.8889H59.2857M48.4306 5.00475C47.912 5 47.3286 5 46.6627 5H22.3725C16.2919 5 13.2494 5 10.9269 6.18682C8.88399 7.23078 7.22427 8.89535 6.18336 10.9442C5 13.2735 5 16.3249 5 22.4233V85.5788C5 91.6772 5 94.7248 6.18336 97.054C7.22427 99.1029 8.88399 100.77 10.9269 101.814C13.2471 103 16.286 103 22.3548 103L63.6453 103C69.714 103 72.7485 103 75.0687 101.814C77.1116 100.77 78.7769 99.1029 79.8178 97.054C81 94.727 81 91.6837 81 85.5973V39.4398C81 38.772 80.9994 38.1868 80.9947 37.6667M48.4306 5.00475C49.9802 5.01892 50.9568 5.07658 51.893 5.30201C53.0008 5.56875 54.0626 6.00866 55.034 6.60569C56.1294 7.27886 57.0698 8.22209 58.9464 10.1042L75.9133 27.1207C77.7911 29.0039 78.7247 29.943 79.3961 31.0418C79.9914 32.0161 80.4319 33.0784 80.6978 34.1894C80.9226 35.1284 80.9806 36.1125 80.9947 37.6667M48.4306 5.00475L48.4286 20.2456C48.4286 26.3439 48.4286 29.3919 49.6119 31.7212C50.6528 33.7701 52.3126 35.4371 54.3555 36.481C56.6757 37.6667 59.7146 37.6667 65.7833 37.6667H80.9947"/>
+              </svg>
+            </RadioButton>
+            <RadioButton value={"Account"}>
+              <svg className ="mb-[-0.2em]" width="1em" height="1em" viewBox="0 0 50 60" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.6297 14.9999C10.6297 22.6092 16.7698 28.7777 24.344 28.7777C31.9182 28.7777 38.0583 22.6092 38.0583 14.9999C38.0583 7.39069 31.9182 1.22217 24.344 1.22217C16.7698 1.22217 10.6297 7.39069 10.6297 14.9999Z"/>
+                <path d="M49 58.9995C49 45.6833 38.2548 34.8884 25 34.8884C11.7452 34.8884 1 45.6833 1 58.9995H49Z"/>
+                <path d="M10.6297 14.9999C10.6297 22.6092 16.7698 28.7777 24.344 28.7777C31.9182 28.7777 38.0583 22.6092 38.0583 14.9999C38.0583 7.39069 31.9182 1.22217 24.344 1.22217C16.7698 1.22217 10.6297 7.39069 10.6297 14.9999Z" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M49 58.9995C49 45.6833 38.2548 34.8884 25 34.8884C11.7452 34.8884 1 45.6833 1 58.9995H49Z" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </RadioButton>
+          </RadioButtonGroup>
+
+          <SectionDivider/>
+
+          <RadioButtonGroup activeContentState={activeContentState} group={group} label={"General"}>
+            <RadioButton value={"Dashboard Settings"}/>
+            <RadioButton value={"Help"}/>
+            <RadioButton value={"Logout"}/>
+          </RadioButtonGroup>
+
+        </nav>
 
     </aside>
   )
