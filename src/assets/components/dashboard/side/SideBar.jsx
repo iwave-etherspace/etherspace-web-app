@@ -14,7 +14,8 @@ const SideBar = ({activeContentState}) => {
 
         <nav className="grid grid-cols-1 place-items-start">
 
-          <SectionDivider/>
+          <SectionDivider additionalClasses={"max-md:hidden"}/>
+
 
           <RadioButtonGroup activeContentState={activeContentState} group={group} label={"Menu"}>
             <RadioButton value={"Overview"}>
