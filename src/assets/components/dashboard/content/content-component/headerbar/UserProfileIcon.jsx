@@ -13,7 +13,7 @@ const UserProfileIcon = ({src,userName,userContact}) => {
         alt="User"
         className="w-[2.81rem] h-full rounded-full"
         />
-        <div className="flex flex-col flex-1 md:block hidden">
+        <div className="flex flex-col flex-1 max-md:hidden">
           <div className="text-white text-sm font-bold leading-5">{userName}</div>
           <div className="text-white text-xs font-normal leading-5">{userContact}</div>
         </div>
