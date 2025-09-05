@@ -6,7 +6,7 @@ const UserProfileIcon = ({src,userName,userContact}) => {
         <img
         src={src}
         alt="User"
-        className="w-[45px] h-full rounded-full"
+        className="w-[2.81rem] h-full rounded-full"
         />
         <div className="flex flex-col flex-1">
           <div className="text-white text-sm font-bold leading-5">{userName}</div>
