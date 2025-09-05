@@ -37,8 +37,8 @@ const RadioButton = ({activeContentState,group,value,children}) => {
               fill-[#1D154A]
               stroke-[#1D154A]
                 ">
-            {children ? <div  className="place-content-center ml-5 mr-2">{children}</div> : null}
-            {children ? <span>{value}</span> : <span className="ml-2">{value}</span>}
+            {children ? <div  className="place-content-center ml-3 mr-2">{children}</div> : null}
+            {children ? <span className="text-[0.8rem]">{value}</span> : <span className="text-[0.7rem] ml-2">{value}</span>}
 
         </label>
 
