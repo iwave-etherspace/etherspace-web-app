@@ -1,14 +1,13 @@
 import React from 'react'
+import RadioButton from './RadioButton'
 
-const RadioButtonGroup = () => {
+const RadioButtonGroup = ({label,children}) => {
   return (
-    <div>
-        <input type="radio" name="Menu">
-        </input>
-        <label>
-
-        </label>
-    </div>
+    <>
+      <div className="text-[rgba(0,0,0,0.4)] text-xs font-normal">{label}</div>
+        {children}
+      
+    </>
   )
 }
 
