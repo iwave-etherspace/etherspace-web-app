@@ -2,7 +2,7 @@ import React from 'react'
 
 const EtherSpaceLogo = () => {
   return (
-    <div className="grid grid-cols-1 place-items-center">
+    <div className="grid grid-cols-1 place-items-center max-md:hidden">
         <img
           src="src/assets/imgs/ether-logo-bg.png"
           alt=""
