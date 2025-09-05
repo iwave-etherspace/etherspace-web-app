@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./assets/components/HomePage";
 import RegisterPage from "./assets/components/RegisterPage";
 import OtpPage from "./assets/components/OtpPage";
 import AccountSetupPage from "./assets/components/AccountSetupPage";
