@@ -9,11 +9,11 @@ import ActionIcon from '../content/content-component/headerbar/ActionIcon'
 const SideBar = ({activeContentState}) => {
   const group = "navigation";
   return (
-    <aside className="grid grid-rows-[auto_3fr_auto] grid-cols-[auto_auto] content-center justify-center">
+    <aside className="grid grid-rows-[auto_3fr_auto] max-md:grid-cols-[auto_auto] content-center justify-center">
         
       <EtherSpaceLogo/>
     
-      <nav className="grid grid-cols-1 place-items-start mt-[1.5rem]">
+      <nav className="grid grid-cols-1 place-items-start max-md:mt-[1.5rem]">
 
         <SectionDivider additionalClasses={"max-md:hidden"}/>
         
@@ -49,7 +49,7 @@ const SideBar = ({activeContentState}) => {
 
       </nav>
 
-      <div className='col-start-2 row-start-1 mt-5'>
+      <div className='col-start-2 row-start-1 mt-5 md:hidden'>
         <ActionIcon alt="Sidebar Collapse Button" src="src/assets/imgs/nav/burger.png"/>
       </div>
 
