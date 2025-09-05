@@ -3,7 +3,7 @@ import React from 'react'
 const SectionDivider = () => {
   return (
     <svg
-    className="w-full m-[12px_0px_12px]"
+    className="w-full m-[1rem_0_1rem]"
     width="100%"
     height="4"
     viewBox="0 0 100 4"

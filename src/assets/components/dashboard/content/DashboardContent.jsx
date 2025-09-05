@@ -7,7 +7,7 @@ import Overview from './pages/Overview'
 
 const DashboardContent = ({firstName,lastName,userContact,profileImage}) => {
   return (
-    <main className="grid grid-cols-1 grid-rows-[auto_auto_3fr]">
+    <main className="h-full grid grid-cols-1 grid-rows-[auto_auto_3fr]">
         <HeaderBar userName={firstName+" "+lastName} userContact={userContact} src={profileImage}/>
         <WelcomeSection firstName={firstName}/>
         <Overview/>

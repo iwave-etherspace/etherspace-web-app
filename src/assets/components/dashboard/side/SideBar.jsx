@@ -10,24 +10,8 @@ const SideBar = () => {
         
         <EtherSpaceLogo/>
 
-        {/* Navigation Content */}
-        <div className="flex flex-col gap-4">
+        <NavSection/>
 
-            <NavSection label="Menu">
-                <NavButton label="Overview" iconIdx={true} isActive={true}/>
-                <NavButton label="History" iconIdx={true}/>
-                <NavButton label="My Account" iconIdx={true}/>
-            </NavSection>
-     
-
-            <NavSection label="General">
-                <NavButton label="Dashboard Settings"/>
-                <NavButton label="Help"/>
-                <NavButton label="Log Out"/>
-            </NavSection>
-        </div>
-
-        <div className="text-[#091237] text-[10px] font-normal leading-5 self-end">powered by: etherspace</div>
     </aside>
   )
 }
