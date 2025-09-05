@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 const sampleData7 = [
   {
     id: 1244235,
@@ -37,29 +38,30 @@ export default function PaymentHistory() {
   }, [query]);
 
   return (
-    <div className="w-full max-w-full">
+    <div className="w-full max-w-full ml-7">
       {/* Header */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-4 flex-wrap gap-2 mt-5">
         <h2 className="text-lg font-semibold text-gray-800 font-sans">
           Payment History
         </h2>
-
-        {/* Search */}
-        <input
-          type="search"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search..."
-          className="px-3 py-2 w-64 rounded-md bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200"
-          aria-label="Search table"
-        />
+        <div className="relative w-64 mt-5">
+          <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search something"
+            className="font-sans pl-10 pr-3 py-2 w-full rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            aria-label="Search table"
+          />
+        </div>
       </div>
 
       {/* ✅ Medium+ screens: Table Layout */}
       <div className="hidden md:block bg-white rounded-lg shadow-sm overflow-x-auto font-sans text-center">
         <table className="min-w-full table-auto">
           <thead>
-            <tr className="text-xs text-gray-400  text-center">
+            <tr className="text-xs text-gray-400 text-center font[400]">
               <th className="px-4 py-3">Reference No.</th>
               <th className="px-4 py-3">Amount</th>
               <th className="px-4 py-3">Date of Payment</th>
@@ -82,8 +84,8 @@ export default function PaymentHistory() {
               </tr>
             ) : (
               filtered.map((row) => (
-                <tr key={row.id} className="hover:bg-gray-50 text-sm">
-                  <td className="px-4 py-3 text-gray-700 font-medium">
+                <tr key={row.id} className="odd:bg-white even:bg-gray-50">
+                  <td className="px-4 py-3 text-gray-900 font-medium">
                     {row.id}
                   </td>
                   <td className="px-4 py-3">{row.amount}</td>

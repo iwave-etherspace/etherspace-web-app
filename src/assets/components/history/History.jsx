@@ -5,7 +5,7 @@ import HistoryContent from "./HistoryContent";
 
 export default function History() {
   return (
-    <div className="h-full p-12">
+    <div className="h-full p-9  bg-[#F9F9F9] mr-10">
       <div className="bg-[#F9F9F9] font-['Inter'] grid grid-cols-[1fr_7fr] gap-4">
         {/* Sidebar always takes the first column */}
         <SideBar />
