@@ -4,11 +4,12 @@ import SectionDivider from './sidebar-components/SectionDivider'
 import EtherSpaceLogo from './sidebar-components/EtherSpaceLogo'
 import RadioButtonGroup from './sidebar-components/RadioButtonGroup'
 import RadioButton from './sidebar-components/RadioButton'
+import ActionIcon from '../content/content-component/headerbar/ActionIcon'
 
 const SideBar = ({activeContentState}) => {
   const group = "navigation";
   return (
-    <aside className="grid grid-rows-[auto_3fr_auto] content-center justify-center">
+    <aside className="grid grid-rows-[auto_3fr_auto] grid-cols-[auto_auto] content-center justify-center">
         
       <EtherSpaceLogo/>
     
@@ -47,6 +48,10 @@ const SideBar = ({activeContentState}) => {
         </RadioButtonGroup>
 
       </nav>
+
+      <div className='col-start-2 row-start-1 mt-5'>
+        <ActionIcon alt="Sidebar Collapse Button" src="src/assets/imgs/nav/burger.png"/>
+      </div>
 
     </aside>
   )
