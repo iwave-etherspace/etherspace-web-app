@@ -9,25 +9,9 @@ const SideBar = () => {
     <aside className="grid grid-rows-[auto_3fr_auto] content-center justify-center">
         
         <EtherSpaceLogo/>
-        
-        {/* <NavButton label="History" iconIdx={true}/> */}
 
-        <NavSection label="Menu"></NavSection>
+        <NavSection/>
 
-        {/* <div className="flex flex-col gap-4">
-            <NavSection label="Menu">
-                <NavButton label="Overview" iconIdx={true} isActive={true}/>
-                <NavButton label="History" iconIdx={true}/>
-                <NavButton label="My Account" iconIdx={true}/>
-            </NavSection>
-     
-
-            <NavSection label="General">
-                <NavButton label="Dashboard Settings"/>
-                <NavButton label="Help"/>
-                <NavButton label="Log Out"/>
-            </NavSection>
-        </div> */}
     </aside>
   )
 }

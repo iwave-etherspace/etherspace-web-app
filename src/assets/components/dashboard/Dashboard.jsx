@@ -17,10 +17,10 @@ function Dashboard() {
         <SideBar/>
       </div>
       <div>
-        AAA
+        <DashboardContent firstName={"Sharmaine"} lastName={"Kho"} userContact={"+(63) 913 142 5241"} profileImage={"src/assets/imgs/default-avatar-female.png"}/>
       </div>
       <div className="row-start-2 col-span-2 ">
-        <div className="text-[#091237] text-[0.4rem] font-normal leading-5 self-end">powered by: etherspace</div>
+        <div className="text-[#091237] text-[0.5rem] font-normal leading-5 self-end">powered by: etherspace</div>
       </div>
     </div>
   );
