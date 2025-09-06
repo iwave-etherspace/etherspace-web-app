@@ -11,9 +11,9 @@ const HistoryPage = () => {
             <ContentCell rStart={1} cSpan={1} rSpan={1}>
                 <BalanceHistory />
             </ContentCell>
-            <ContentCell rStart={2} cSpan={1} rSpan={1}>
+            {/* <ContentCell rStart={2} cSpan={1} rSpan={1}>
                 <PaymentHistory />
-            </ContentCell>
+            </ContentCell> */}
         </div>
     </MainContent>
   )
