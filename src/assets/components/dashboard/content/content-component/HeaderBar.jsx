@@ -1,6 +1,6 @@
 import React from 'react'
-import ActionIcon from './headerbar/ActionIcon'
-import UserProfileIcon from './headerbar/UserProfileIcon'
+import ActionIcon from './generic-components/ActionIcon'
+import UserProfileIcon from './generic-components/UserProfileIcon'
 
 const HeaderBar = ({userName,userContact,src}) => {
   return (
