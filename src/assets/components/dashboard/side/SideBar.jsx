@@ -4,7 +4,7 @@ import SectionDivider from './sidebar-components/SectionDivider'
 import EtherSpaceLogo from './sidebar-components/EtherSpaceLogo'
 import RadioButtonGroup from './sidebar-components/RadioButtonGroup'
 import RadioButton from './sidebar-components/RadioButton'
-import ActionIcon from '../content/content-component/ActionIcon'
+import ActionIcon from '../content/content-component/generic-components/ActionIcon'
 
 const SideBar = ({activeContentState}) => {
   const group = "navigation";
