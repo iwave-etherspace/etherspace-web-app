@@ -54,16 +54,18 @@ export default function BalanceHistory() {
     // <div className="w-full max-w-full ml-7">
     <>
       {/* Header */}
-      <div className="grid grid-cols-2 grid-rows-[1fr_auto] items-center p-10">
+      <div className="grid grid-rows-[1fr_auto] p-10">
         
-        <h2 className="text-lg font-semibold text-gray-800 font-sans">
-          Balance History
-        </h2>
-        <div className="grid justify-end">
-          <SearchBox query={query} setQuery={setQuery}/>
+        <div className="row-start-1 grid md:grid-cols-2 max-md:grid-rows-2">
+          <h2 className="text-lg font-semibold text-gray-800 font-sans">
+            Balance History
+          </h2>
+          <div className="md:ml-20">
+            <SearchBox id={"balancehistory"} query={query} setQuery={setQuery}/>
+          </div>
         </div>
         
-        <div className="row-start-2 col-span-2 hidden md:block overflow-x-auto">
+        <div className="row-start-2 hidden md:block overflow-x-auto">
           <div className="bg-white rounded-lg shadow-sm font-sans text-center text-gray-400 text-xs">
             <table className="min-w-full w-full table-auto">
               <thead>
@@ -123,7 +125,7 @@ export default function BalanceHistory() {
           </div>
         </div>
 
-        <div className="row-start-2 col-span-2 md:hidden space-y-4 font-sans">
+        <div className="row-start-2 md:hidden space-y-4 font-sans">
           {filtered.length === 0 ? (
             <p className="text-center text-sm text-gray-500">No results found.</p>
           ) : (
