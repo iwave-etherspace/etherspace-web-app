@@ -1,25 +1,29 @@
 import React from 'react'
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
-const SearchBox = ({query,setQuery}) => {
+const SearchBox = ({id,query,setQuery}) => {
+    const actualId = id+"-searchbox";
   return (
     
-        <div className="relative flex place-items-center">
-            <div className="absolute pl-5">
-                <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
-            </div>
+        <div className="flex place-items-center gap-2
+            w-auto
+            font-sans
+            py-2 px-3
+            rounded-xl bg-white border border-gray-200
+            focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-200">
+            <label htmlFor={actualId}>
+                <div className="">
+                    <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
+                </div>
+            </label>
+
             <input
-                className="
-                w-[15rem]
-                font-sans
-                pl-15 py-2
-                rounded-xl bg-white border border-gray-200
-                focus:outline-none focus:ring-2 focus:ring-blue-200
-                "
+                className="w-full outline-0"
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search something"
                 aria-label="Search table"
+                id={actualId}
             />
         </div>
 
