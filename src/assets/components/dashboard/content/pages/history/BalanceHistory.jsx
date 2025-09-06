@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
-import SearchBox from "../../content-component/generic-components/SearchBox";
+
+import HistoryTableHeader from "./HistoryTableHeader";
 
 const sampleData = [
   {
@@ -34,7 +35,9 @@ const sampleData = [
 ];
 
 export default function BalanceHistory() {
-  const [query, setQuery] = useState("");
+  //const [query, setQuery] = useState("");
+  const queryState = useState("");
+  const query = queryState[0];
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -51,18 +54,12 @@ export default function BalanceHistory() {
   }, [query]);
 
   return (
-    // <div className="w-full max-w-full ml-7">
     <>
       {/* Header */}
-      <div className="grid grid-rows-[1fr_auto] p-10">
+      <div className="grid grid-rows-[1fr_auto] p-10 gap-2">
         
         <div className="row-start-1 grid md:grid-cols-2 max-md:grid-rows-2">
-          <h2 className="text-lg font-semibold text-gray-800 font-sans">
-            Balance History
-          </h2>
-          <div className="md:ml-20">
-            <SearchBox id={"balancehistory"} query={query} setQuery={setQuery}/>
-          </div>
+          <HistoryTableHeader headerLabel={"Balance History"} id={"balancehistory"} queryState={queryState}/>
         </div>
         
         <div className="row-start-2 hidden md:block overflow-x-auto">
