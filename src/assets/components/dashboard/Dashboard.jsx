@@ -9,7 +9,7 @@ function Dashboard() {
   const activeContent = activeContentState[0];
   console.log("activeContent: ",activeContent);
   return (
-    <div className="h-dvh border-[1rem] border-amber-500 grid md:grid-cols-[10rem_7fr] grid-rows-[1fr_auto] gap-4">
+    <div className="p-10 grid md:grid-cols-[10rem_7fr] grid-rows-[1fr_auto] gap-4">
       <div className="col-start-1 max-md:hidden">
         <SideBar activeContentState={activeContentState}/>
       </div>
