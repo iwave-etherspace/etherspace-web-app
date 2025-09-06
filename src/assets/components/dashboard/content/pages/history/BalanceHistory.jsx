@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import SearchBox from "../../content-component/generic-components/SearchBox";
 
 const sampleData = [
   {
@@ -45,32 +46,46 @@ export default function BalanceHistory() {
         row.modeOfPayment,
         row.status,
         String(row.activity),
-      ].some((val) => val.toLowerCase().includes(q))
+      ].some((val) => val.toString().toLowerCase().includes(q))
     );
   }, [query]);
 
   return (
-    <div className="w-full max-w-full ml-7">
+    // <div className="w-full max-w-full ml-7">
+    <>
       {/* Header */}
-      <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+      <div className="grid grid-col-2 grid-flow-col items-center border-[1rem] border-purple-500 ">
+        
         <h2 className="text-lg font-semibold text-gray-800 font-sans">
           Balance History
         </h2>
-        <div className="relative w-64 mt-5">
-          <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-          <input
-            type="search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search something"
-            className="font-sans pl-10 pr-3 py-2 w-full rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200"
-            aria-label="Search table"
-          />
-        </div>
+        <SearchBox query={query} setQuery={setQuery}/>
+        {/* <div className="grid justify-end">
+          <div className="relative flex place-items-center">
+            <div className="absolute pl-5">
+              <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
+            </div>
+            <input
+              className="
+              w-[15rem]
+              font-sans
+              pl-15 py-2
+              rounded-xl bg-white border border-gray-200
+              focus:outline-none focus:ring-2 focus:ring-blue-200
+              "
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search something"
+              aria-label="Search table"
+            />
+          </div>
+        </div> */}
+        
       </div>
 
       {/* Table for medium+ screens */}
-      <div className="hidden md:block overflow-x-auto">
+      {/* <div className="hidden md:block overflow-x-auto">
         <div className="bg-white rounded-lg shadow-sm font-sans text-center text-gray-400 text-xs">
           <table className="min-w-full w-full table-auto">
             <thead>
@@ -128,10 +143,10 @@ export default function BalanceHistory() {
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
 
       {/* Cards for small screens */}
-      <div className="md:hidden space-y-4 font-sans">
+      {/* <div className="md:hidden space-y-4 font-sans">
         {filtered.length === 0 ? (
           <p className="text-center text-sm text-gray-500">No results found.</p>
         ) : (
@@ -175,7 +190,7 @@ export default function BalanceHistory() {
             </div>
           ))
         )}
-      </div>
-    </div>
+      </div> */}
+    </>
   );
 }
