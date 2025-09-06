@@ -1,7 +1,7 @@
 import React from 'react'
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 const SearchBox = ({id,query,setQuery}) => {
-    const actualId = id+"-searchbox";
+    const actualId = id+"searchbox";
   return (
     
         <div className="flex place-items-center gap-2
