@@ -4,62 +4,6 @@
   @apply h-full;
 }
 
-.nav-radio-button-label {
-    
-}
-
-.nav-item {
-  display: flex;
-  width: 180px;
-  height: 34px;
-  /* padding: 0 3rem 0 1rem; */
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.nav-item.active {
-  background: #c96440;
-}
-
-.nav-item.active .nav-text {
-  color: #fff;
-}
-
-.nav-item:hover:not(.active) {
-  background: rgba(201, 100, 64, 0.1);
-}
-
-.nav-item-content {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 8px;
-  margin-left: 1rem;
-  flex: 1;
-}
-
-.nav-icon-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-text {
-  color: #000;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 10px;
-}
-
-.overview-icon {
-  width: 20px;
-  height: 20px;
-}
-
 /* Balance Card */
 .balance-card {
   background: linear-gradient(106deg, #bf5e3c 7.76%, #3f191b 84.82%);
@@ -186,13 +130,6 @@
 }
 
 /* Payment History Section */
-.payment-history-section {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  display: flex;
-  gap: 24px;
-}
-
 .payment-history-card {
   background: #fff;
   border-radius: 10px;
