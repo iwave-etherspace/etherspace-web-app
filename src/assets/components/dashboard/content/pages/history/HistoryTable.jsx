@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import HistoryTableHeader from "./HistoryTableHeader";
+
 import SearchBox from "../../content-component/generic-components/SearchBox";
 
 const HistoryTable = ({data,queryState,filtered,
@@ -11,16 +11,15 @@ const HistoryTable = ({data,queryState,filtered,
 
     return (
         <>
-        <div className={`grid grid-rows-[1fr_auto] gap-2 bg-white rounded-lg ${
+        <div className={`grid grid-rows-[auto_1fr] gap-2 bg-white rounded-lg ${
             overviewMode
             ? "p-2"
             : "p-5"
         }`}>
             
             <div className="row-start-1 grid md:grid-cols-2 max-md:grid-rows-2">
-                <div className="grid items-center">
-                    {headerLabel1}
-                </div>
+
+                {headerLabel1}
                 
                 {overviewMode
                 ?<>{headerLabel2}</>

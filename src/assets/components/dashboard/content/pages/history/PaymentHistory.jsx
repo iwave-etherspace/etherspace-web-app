@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 
-import HistoryTableHeader from "./HistoryTableHeader";
 import HistoryTable from "./HistoryTable";
 
 const sampleData7 = [
@@ -48,7 +47,7 @@ const PaymentHistory = ({overviewMode}) => {
       id={"paymenthistory"} 
       overviewMode={overviewMode}
       headerLabel1={
-        <div className="grid items-center">                
+        <div className="grid items-center">
           <span className={`font-semibold text-gray-800 font-sans ${
             overviewMode
             ?"text-xs"
@@ -59,7 +58,7 @@ const PaymentHistory = ({overviewMode}) => {
         </div>
       }
       headerLabel2={
-        <div className="md:ml-20">
+        <div className="md:ml-20 grid items-center">
           <span className="text-gray-400 grid md:justify-end text-sm">
             This Week
           </span>
