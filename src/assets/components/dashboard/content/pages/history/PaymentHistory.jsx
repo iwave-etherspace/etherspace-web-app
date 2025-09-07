@@ -60,7 +60,7 @@ const PaymentHistory = ({overviewMode}) => {
       overviewMode={overviewMode}
       headerLabel2={
         <>
-          <span className="text-gray-400 grid justify-end text-sm">
+          <span className="text-gray-400 grid md:justify-end text-sm">
             This Week
           </span>
         </>
