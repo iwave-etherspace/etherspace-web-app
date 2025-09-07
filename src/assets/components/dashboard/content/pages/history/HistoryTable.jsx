@@ -18,21 +18,17 @@ const HistoryTable = ({data,queryState,filtered,
         }`}>
             
             <div className="row-start-1 grid md:grid-cols-2 max-md:grid-rows-2">
-                <HistoryTableHeader id={id} queryState={queryState}
-                headerLabel1={
-                    <>
-                        {headerLabel1}
-                    </>
+                <div className="grid items-center">
+                    {headerLabel1}
+                </div>
+                
+                {overviewMode
+                ?<>{headerLabel2}</>
+                :
+                <div className="md:ml-20">
+                    <SearchBox id={id} query={queryState[0]} setQuery={queryState[1]}/>
+                </div>
                 }
-
-                headerLabel2={
-                    <>
-                        {overviewMode
-                        ?<>{headerLabel2}</>
-                        :<SearchBox id={id} query={queryState[0]} setQuery={queryState[1]}/>}
-                    </>
-                }
-                />
             </div>
 
             <div className="row-start-2 max-md:hidden">
