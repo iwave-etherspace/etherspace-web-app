@@ -46,6 +46,7 @@ const PaymentHistory = ({overviewMode}) => {
   return (
     <HistoryTable data={sampleData7} queryState={queryState} filtered={filtered}
       id={"paymenthistory"} 
+      overviewMode={overviewMode}
       headerLabel1={
         <>
           <span className={`font-semibold text-gray-800 font-sans ${
@@ -57,7 +58,6 @@ const PaymentHistory = ({overviewMode}) => {
           </span>
         </>
       }
-      overviewMode={overviewMode}
       headerLabel2={
         <>
           <span className="text-gray-400 grid md:justify-end text-sm">
