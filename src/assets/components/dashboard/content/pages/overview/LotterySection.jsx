@@ -46,7 +46,6 @@ const LotterySection = () => {
           
           {sampleData7.map((lotto) => (
             <>
-              {console.log("lotto: ",gameImageMap[lotto.game])}
               <div className="flex flex-col items-center">
 
                 <img
