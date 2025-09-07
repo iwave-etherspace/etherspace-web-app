@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --color-etherspace-blank: #F9F9F9;
+}
+
 .content-cell > * {
   @apply h-full;
 }

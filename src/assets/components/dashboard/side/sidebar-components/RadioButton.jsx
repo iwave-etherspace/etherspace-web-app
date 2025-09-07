@@ -9,7 +9,7 @@ const RadioButton = ({activeContentState,group,value,children}) => {
         <input type="radio" checked={value === activeContent} onChange={e => setActiveContent(e.target.value)} name={group} value={value} id={actualId} className="hidden peer"/>
         <label htmlFor={actualId} className="
                 flex 
-              bg-white
+              bg-etherspace-blank
               text-black
                 w-full
                 h-full
@@ -24,16 +24,16 @@ const RadioButton = ({activeContentState,group,value,children}) => {
                 transition-colors duration-200
                 
               peer-checked:bg-[#C96440]
-              peer-checked:text-white
+              peer-checked:text-etherspace-blank
               peer-checked:hover:bg-[#C96440]
                 peer-checked:hover:opacity-100
-              peer-checked:hover:text-white
-              peer-checked:hover:fill-white
-              peer-checked:hover:stroke-white
+              peer-checked:hover:text-etherspace-blank
+              peer-checked:hover:fill-etherspace-blank
+              peer-checked:hover:stroke-etherspace-blank
 
 
-              peer-checked:fill-white
-              peer-checked:stroke-white
+              peer-checked:fill-etherspace-blank
+              peer-checked:stroke-etherspace-blank
               fill-[#1D154A]
               stroke-[#1D154A]
                 ">
