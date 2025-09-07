@@ -7,7 +7,7 @@ const UserProfileIcon = ({src,userName,userContact}) => {
                     p-[0.7rem_0.9rem_0.7rem] 
                     rounded-2xl
                     md:w-[14rem]
-                    h-full shrink-0 bg-gradient-to-r from-[#BF5E3C] to-[#21102C]">
+                    h-full shrink-0 bg-etherspace-gradient">
         <img
         src={src}
         alt="User"

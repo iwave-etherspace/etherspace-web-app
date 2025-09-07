@@ -9,6 +9,10 @@
   @apply h-full;
 }
 
+.bg-etherspace-gradient{
+  @apply bg-gradient-to-r from-[#BF5E3C] to-[#21102C];
+}
+
 /* Balance Card */
 .balance-card {
   background: linear-gradient(106deg, #bf5e3c 7.76%, #3f191b 84.82%);
