@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 
 import HistoryTable from "./HistoryTable";
+import TicketModal from "./TicketModal";
 
 const sampleData7 = [
   {
@@ -29,7 +30,7 @@ const sampleData7 = [
     status: "Successful",
   },
 ];
-const PaymentHistory = ({overviewMode}) => {
+const PaymentHistory = ({setTicketModalIsOpen,overviewMode}) => {
   //const [query, setQuery] = useState("");
   const queryState = useState("");
   const query = queryState[0];
@@ -49,6 +50,8 @@ const PaymentHistory = ({overviewMode}) => {
       ].some((val) => val.toString().toLowerCase().includes(q))
     );
   }, [query]);
+
+  
   
   return (
     <HistoryTable data={sampleData7} queryState={queryState} filtered={filtered}
@@ -123,7 +126,9 @@ const PaymentHistory = ({overviewMode}) => {
               }`}>
                 <button className={`px-3 py-1 rounded-md bg-green-100 text-green-700 hover:bg-green-200 font-medium ${
                   overviewMode ? " text-[0.5rem]":" text-xs"
-                }`}>
+                }`}
+                onClick={()=>setTicketModalIsOpen(true)}
+                >
                   View
                 </button>
               </td>
