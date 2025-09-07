@@ -32,12 +32,12 @@ const PaymentHistory2 = () => {
     if (!q) return sampleData7;
     return sampleData7.filter((row) =>
       [
-        row.name,
-        row.email,
-        row.role,
+        row.id,
+        row.amount,
+        row.dateOfPayment,
+        row.game,
+        row.drawDate,
         row.status,
-        row.department,
-        row.location,
         String(row.id),
       ].some((val) => val.toString().toLowerCase().includes(q))
     );
