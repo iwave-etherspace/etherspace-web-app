@@ -286,7 +286,7 @@ const Overview = () => {
                 </div>
             </ContentCell> */}
             <ContentCell className={"md:row-start-1 md:col-start-1 md:col-span-2 col-span-1"}>
-                <BalanceCard/>
+                <BalanceCard balanceAmount={"₱ 3,027.00"}/>
             </ContentCell>
             <ContentCell className={"md:row-start-2 md:col-start-4 md:col-span-2 col-span-1"}>
                 <BalanceHistory overviewMode={true}/>
