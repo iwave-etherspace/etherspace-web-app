@@ -48,7 +48,7 @@ const PaymentHistory = ({overviewMode}) => {
       id={"paymenthistory"} 
       overviewMode={overviewMode}
       headerLabel1={
-        <>
+        <div className="grid items-center">                
           <span className={`font-semibold text-gray-800 font-sans ${
             overviewMode
             ?"text-xs"
@@ -56,7 +56,7 @@ const PaymentHistory = ({overviewMode}) => {
           }`}>
             Payment History
           </span>
-        </>
+        </div>
       }
       headerLabel2={
         <div className="md:ml-20">
