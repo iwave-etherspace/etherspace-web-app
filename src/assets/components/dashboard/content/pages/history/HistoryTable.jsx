@@ -1,23 +1,45 @@
 import React, { useState, useMemo } from "react";
 import HistoryTableHeader from "./HistoryTableHeader";
+import SearchBox from "../../content-component/generic-components/SearchBox";
 
 const HistoryTable = ({data,queryState,filtered,
-    id,headerLabel,
+    id,
+    overviewMode,
+    headerLabel1,
+    headerLabel2,
     tableHeadContent,tableBodyContent,tableBodyContentMobile}) => {
 
     return (
         <>
-        <div className="grid grid-rows-[1fr_auto] gap-2">
+        <div className={`grid grid-rows-[1fr_auto] gap-2 bg-white rounded-lg ${
+            overviewMode
+            ? "p-2"
+            : "p-5"
+        }`}>
             
             <div className="row-start-1 grid md:grid-cols-2 max-md:grid-rows-2">
-                <HistoryTableHeader headerLabel={headerLabel} id={id} queryState={queryState}/>
+                <HistoryTableHeader id={id} queryState={queryState}
+                headerLabel1={
+                    <>
+                        {headerLabel1}
+                    </>
+                }
+
+                headerLabel2={
+                    <>
+                        {overviewMode
+                        ?<>{headerLabel2}</>
+                        :<SearchBox id={id} query={queryState[0]} setQuery={queryState[1]}/>}
+                    </>
+                }
+                />
             </div>
 
             <div className="row-start-2 max-md:hidden">
                 <div className="bg-white rounded-lg shadow-sm font-sans text-center text-gray-400 text-xs">
-                    <table className="min-w-full w-full table-auto">
+                    <table className="min-w-full w-full table-fixed">
                         <thead>
-                            {tableHeadContent}
+                            <>{tableHeadContent}</>
                         </thead>
 
                         <tbody>
@@ -31,9 +53,7 @@ const HistoryTable = ({data,queryState,filtered,
                                 </td>
                                 </tr>
                             ) : (
-                                <>
-                                    {tableBodyContent}
-                                </>
+                                <>{tableBodyContent}</>
                             )}
                         </tbody>
                     </table>
@@ -44,9 +64,7 @@ const HistoryTable = ({data,queryState,filtered,
                 {filtered.length === 0 ? (
                     <p className="text-center text-sm text-gray-500">No results found.</p>
                 ) : (
-                    <>
-                        {tableBodyContentMobile}
-                    </>
+                    <>{tableBodyContentMobile}</>
                 )}
             </div>
 

@@ -35,7 +35,7 @@ const sampleData = [
   },
 ];
 
-const BalanceHistory = () => {
+const BalanceHistory = ({overviewMode}) => {
   //const [query, setQuery] = useState("");
   const queryState = useState("");
   const query = queryState[0];
@@ -57,7 +57,13 @@ const BalanceHistory = () => {
   return (
     <HistoryTable data={sampleData} queryState={queryState} filtered={filtered}
       id={"balancehistory"} 
-      headerLabel={"Balance History"}
+      headerLabel1={
+        <>
+          <span className="font-semibold text-gray-800 font-sans text-lg">
+            Balance History
+          </span>
+        </>
+      }
       tableHeadContent={
         <>
           <tr className="text-gray-400 text-xs md:text-xs">

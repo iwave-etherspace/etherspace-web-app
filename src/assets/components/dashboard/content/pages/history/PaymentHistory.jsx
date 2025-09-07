@@ -22,7 +22,7 @@ const sampleData7 = [
     status: "Failed",
   },
 ];
-const PaymentHistory = () => {
+const PaymentHistory = ({overviewMode}) => {
   //const [query, setQuery] = useState("");
   const queryState = useState("");
   const query = queryState[0];
@@ -42,21 +42,39 @@ const PaymentHistory = () => {
       ].some((val) => val.toString().toLowerCase().includes(q))
     );
   }, [query]);
-
+  
   return (
     <HistoryTable data={sampleData7} queryState={queryState} filtered={filtered}
       id={"paymenthistory"} 
-      headerLabel={"Payment History"}
+      headerLabel1={
+        <>
+          <span className={`font-semibold text-gray-800 font-sans ${
+            overviewMode
+            ?"text-xs"
+            :"text-lg"
+          }`}>
+            Payment History
+          </span>
+        </>
+      }
+      overviewMode={overviewMode}
+      headerLabel2={
+        <>
+          <span className="text-gray-400 grid justify-end text-sm">
+            This Week
+          </span>
+        </>
+      }
       tableHeadContent={
         <>
-          <tr className="text-xs text-gray-400 text-center font[400]">
-            <th className="px-4 py-3">Reference No.</th>
-            <th className="px-4 py-3">Amount</th>
-            <th className="px-4 py-3">Date of Payment</th>
-            <th className="px-4 py-3">Game</th>
-            <th className="px-4 py-3">Draw Date</th>
-            <th className="px-4 py-3">Status</th>
-            <th className="px-4 py-3 text-right">Action</th>
+          <tr className={"text-gray-400 text-center font-[400]"+(overviewMode ? " text-[0.5rem]":" text-xs")}>
+            <th className="py-3">Reference No.</th>
+            <th className="py-3">Amount</th>
+            <th className="py-3">Date of Payment</th>
+            <th className="py-3">Game</th>
+            <th className="py-3">Draw Date</th>
+            <th className="py-3">Status</th>
+            <th className="py-3">Action</th>
           </tr>
         </>
       }
@@ -65,28 +83,38 @@ const PaymentHistory = () => {
           {filtered.map((row) => (
             <tr 
               key={row.id} 
-              className="odd:bg-white even:bg-gray-50"
+              className={`odd:bg-white even:bg-gray-50${
+                overviewMode ? " text-[0.5rem]":" text-xs"
+              }`}
             >
-              <td className="px-4 py-3 text-gray-900 font-medium">
+              <td className="py-3 text-gray-900 font-medium">
                 {row.id}
               </td>
               <td className="px-4 py-3">{row.amount}</td>
               <td className="px-4 py-3">{row.dateOfPayment}</td>
               <td className="px-4 py-3">{row.game}</td>
               <td className="px-4 py-3">{row.drawDate}</td>
-              <td className="px-4 py-3">
+              <td className={`py-3 ${
+                overviewMode ? null:" px-4"
+              }`}>
                 <span
-                  className={`px-2 py-1 rounded-full text-xs font-medium ${
+                  className={`px-1.5 py-1 rounded-full font-medium ${
                     row.status === "Successful"
                       ? "bg-green-100 text-green-700"
                       : "bg-red-100 text-red-700"
+                  } ${
+                    overviewMode ? null:" text-xs"
                   }`}
                 >
                   {row.status}
                 </span>
               </td>
-              <td className="px-4 py-3 text-right">
-                <button className="px-3 py-1 rounded-md bg-green-100 text-green-700 hover:bg-green-200 text-xs font-medium">
+              <td className={`py-3 ${
+                overviewMode ? null:" px-4"
+              }`}>
+                <button className={`px-3 py-1 rounded-md bg-green-100 text-green-700 hover:bg-green-200 font-medium ${
+                  overviewMode ? " text-[0.5rem]":" text-xs"
+                }`}>
                   View
                 </button>
               </td>

@@ -1,13 +1,14 @@
 import React from 'react'
 import MainContent from '../content-component/MainContent'
 import ContentCell from '../content-component/maincontent/ContentCell'
+import PaymentHistory from './history/PaymentHistory'
+import BalanceHistory from './history/BalanceHistory'
 
 const Overview = () => {
   return (
     <MainContent>
-        <div className="h-full grid grid-cols-3 grid-rows-[1fr_2fr] content-start gap-4">
-            
-            <ContentCell cStart={1} rStart={1} cSpan={1} rSpan={1}>
+        <div className="h-full grid md:grid-cols-3 grid-cols-1 md:grid-rows-[1fr_2fr] max-md:grid-flow-row content-start gap-4">
+            {/* <ContentCell cStart={1} rStart={1} cSpan={1} rSpan={1}>
                 <div className="balance-card">
                     <div className="balance-header">My Balance</div>
                     <div className="balance-amount">₱ 3,027.00</div>
@@ -282,7 +283,20 @@ const Overview = () => {
                         </div>
                     </div>
                 </div>
+            </ContentCell> */}
+            <ContentCell className={"md:row-start-2 md:col-span-2 col-span-1"}>
+                <PaymentHistory overviewMode={true}/>
             </ContentCell>
+            {/* <ContentCell cStart={3} rStart={2} cSpan={1} rSpan={1}>
+                <div className="balance-card">
+                    <div className="balance-header">My Balance</div>
+                    <div className="balance-amount">₱ 3,027.00</div>
+                    <div className="balance-actions">
+                        <button className="cash-out-btn">Cash Out</button>
+                        <button className="cash-in-btn">Cash In</button>
+                    </div>
+                </div>
+            </ContentCell> */}
 
         </div>
     </MainContent>
