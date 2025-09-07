@@ -10,13 +10,14 @@ const BalanceCard = ({balanceAmount}) => {
         p-5
         flex
         flex-col
-        gap-2
+        gap-4
         box-border">
 
         <div className="text-lg font-normal leading-5">My Balance</div>
         <div className="text-4xl font-bold leading-5">{balanceAmount}</div>
-        <div className="flex mt-10">
+        <div className="flex mt-auto">
             <button className="
+            w-fill
             bg-white
             hover:bg-white/80
             py-2
