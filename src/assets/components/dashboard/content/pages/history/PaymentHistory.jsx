@@ -67,7 +67,11 @@ const PaymentHistory = ({overviewMode}) => {
       }
       tableHeadContent={
         <>
-          <tr className={"text-gray-400 text-center font-[400]"+(overviewMode ? " text-[0.5rem]":" text-xs")}>
+          <tr className={`text-gray-400 text-center font-[400]${
+            overviewMode 
+            ?" text-[0.5rem]"
+            :" text-xs"
+          }`}>
             <th className="py-3">Reference No.</th>
             <th className="py-3">Amount</th>
             <th className="py-3">Date of Payment</th>
