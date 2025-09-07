@@ -2,6 +2,7 @@
 
 @theme {
   --color-etherspace-blank: #F9F9F9;
+  --color-etherspace-orange: #C96440;
 }
 
 .content-cell > * {

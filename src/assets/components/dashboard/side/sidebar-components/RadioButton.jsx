@@ -16,16 +16,16 @@ const RadioButton = ({activeContentState,group,value,children}) => {
                 rounded-[0.3rem]
                 p-1
                 
-              hover:bg-[#c96440]/10
+              hover:bg-etherspace-orange/10
               hover:text-black
               hover:fill-[#1D154A]
               hover:stroke-[#1D154A]
 
                 transition-colors duration-200
                 
-              peer-checked:bg-[#C96440]
+              peer-checked:bg-etherspace-orange
               peer-checked:text-etherspace-blank
-              peer-checked:hover:bg-[#C96440]
+              peer-checked:hover:bg-etherspace-orange
                 peer-checked:hover:opacity-100
               peer-checked:hover:text-etherspace-blank
               peer-checked:hover:fill-etherspace-blank
