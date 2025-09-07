@@ -153,7 +153,7 @@ const BalanceHistory = ({overviewMode}) => {
         <>
           {filtered.map((row) => (
             <div
-                key={row.activity}
+                key={row.activity}//TODO: need to replace with unique key value
                 className="divide-y divide-gray-100  bg-white shadow-sm rounded-lg p-4 space-y-2 text-sm"
             >
               <div className="flex justify-between">
