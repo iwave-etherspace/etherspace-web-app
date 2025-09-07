@@ -87,11 +87,11 @@ const PaymentHistory = ({overviewMode}) => {
           {filtered.map((row) => (
             <tr 
               key={row.id} 
-              className={`odd:bg-white even:bg-gray-50${
+              className={`odd:bg-white even:bg-gray-50 text-gray-900 font-medium ${
                 overviewMode ? " text-[0.5rem]":" text-xs"
               }`}
             >
-              <td className="py-3 text-gray-900 font-medium">
+              <td className="py-3">
                 {row.id}
               </td>
               <td className="px-4 py-3">{row.amount}</td>
