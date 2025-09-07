@@ -55,14 +55,13 @@ export default function BalanceHistory() {
 
   return (
     <>
-      {/* Header */}
       <div className="grid grid-rows-[1fr_auto] p-10 gap-2">
         
         <div className="row-start-1 grid md:grid-cols-2 max-md:grid-rows-2">
           <HistoryTableHeader headerLabel={"Balance History"} id={"balancehistory"} queryState={queryState}/>
         </div>
         
-        <div className="row-start-2 hidden md:block overflow-x-auto">
+        <div className="row-start-2 max-md:hidden overflow-x-auto">
           <div className="bg-white rounded-lg shadow-sm font-sans text-center text-gray-400 text-xs">
             <table className="min-w-full w-full table-auto">
               <thead>
@@ -169,53 +168,6 @@ export default function BalanceHistory() {
         </div>
 
       </div>
-
-      {/* Cards for small screens */}
-      {/* <div className="md:hidden space-y-4 font-sans">
-        {filtered.length === 0 ? (
-          <p className="text-center text-sm text-gray-500">No results found.</p>
-        ) : (
-          filtered.map((row) => (
-            <div
-              key={row.activity}
-              className="divide-y divide-gray-100  bg-white shadow-sm rounded-lg p-4 space-y-2 text-sm"
-            >
-              <div className="flex justify-between">
-                <span className="font-medium text-gray-600">Activity</span>
-                <span className="text-gray-800">{row.activity}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="font-medium text-gray-600">
-                  Payment Ref No.
-                </span>
-                <span className="text-gray-800">{row.refNo}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="font-medium text-gray-600">Cash in/out</span>
-                <span className="text-gray-800">{row.amount}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="font-medium text-gray-600">
-                  Mode of Payment
-                </span>
-                <span className="text-gray-800">{row.modeOfPayment}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="font-medium text-gray-600">Status</span>
-                <span
-                  className={`px-2 py-1 rounded-full text-xs font-medium ${
-                    row.status === "Success"
-                      ? "bg-green-100 text-green-700"
-                      : "bg-red-100 text-red-700"
-                  }`}
-                >
-                  {row.status}
-                </span>
-              </div>
-            </div>
-          ))
-        )}
-      </div> */}
     </>
   );
 }
