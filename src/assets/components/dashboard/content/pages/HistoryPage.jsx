@@ -10,10 +10,10 @@ const HistoryPage = () => {
   return (
     <MainContent>
         <div className="h-full grid grid-flow-row content-start gap-4">
-            <ContentCell cStart={1} cSpan={1} rSpan={1}>
+            <ContentCell>
                 <BalanceHistory />
             </ContentCell>
-            <ContentCell cStart={1} cSpan={1} rSpan={1}>
+            <ContentCell>
                 <PaymentHistory />
             </ContentCell>
         </div>
