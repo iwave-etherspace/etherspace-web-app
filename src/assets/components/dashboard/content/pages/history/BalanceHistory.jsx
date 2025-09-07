@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 
-import HistoryTableHeader from "./HistoryTableHeader";
 import HistoryTable from "./HistoryTable";
 
 const sampleData = [
@@ -57,21 +56,34 @@ const BalanceHistory = ({overviewMode}) => {
   return (
     <HistoryTable data={sampleData} queryState={queryState} filtered={filtered}
       id={"balancehistory"} 
+      overviewMode={overviewMode}
       headerLabel1={
-        <>
-          <span className="font-semibold text-gray-800 font-sans text-lg">
+        <div className={`grid items-center ${
+          overviewMode
+          ? " col-span-2"
+          : null
+        }`}>
+          <span className={`font-semibold text-gray-800 font-sans ${
+            overviewMode
+            ?"md:text-xs text-lg"
+            :"text-lg"
+          }`}>
             Balance History
           </span>
-        </>
+        </div>
       }
       tableHeadContent={
         <>
-          <tr className="text-gray-400 text-xs md:text-xs">
-            <th className="px-4 py-3">Activity</th>
-            <th className="px-4 py-3">Payment Reference No.</th>
-            <th className="px-4 py-3">Cash in/out</th>
-            <th className="px-4 py-3">Mode of Payment</th>
-            <th className="px-4 py-3">Status</th>
+          <tr className={`text-gray-400 text-center font-[400]${
+            overviewMode 
+            ?" text-[0.5rem]"
+            :" text-xs"
+          }`}>
+            <th className="py-3">Activity</th>
+            {!overviewMode && <th className="py-3">Payment Reference No.</th>}
+            <th className="py-3">Cash in/out</th>
+            {!overviewMode && <th className="py-3">Mode of Payment</th>}
+            <th className="py-3">Status</th>
           </tr>
         </>
       }
@@ -80,31 +92,59 @@ const BalanceHistory = ({overviewMode}) => {
           {filtered.map((row) => (
             <tr
                 key={row.activity}
-                className="odd:bg-white even:bg-gray-50"
+                className={`odd:bg-white even:bg-gray-50 text-sm text-gray-900 ${
+                overviewMode ? " text-[0.5rem]":" text-xs"
+              }`}
             >
-                <td className="px-4 py-3 text-sm text-gray-900">
-                {row.activity}
-                </td>
-                <td className="px-4 py-3 text-sm text-gray-900">
-                {row.refNo}
-                </td>
-                <td className="px-4 py-3 text-sm text-gray-900">
-                {row.amount}
-                </td>
-                <td className="px-4 py-3 text-sm text-gray-900">
-                {row.modeOfPayment}
-                </td>
-                <td className="px-4 py-3 text-sm">
-                <span
-                    className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
-                    row.status === "Success"
-                        ? "bg-green-100 text-green-700"
-                        : "bg-red-100 text-red-700"
-                    }`}
-                >
-                    {row.status}
-                </span>
-                </td>
+              {overviewMode 
+              ?
+                <>
+                  <td className="px-4 py-3">
+                  {row.activity}
+                  </td>
+                  <td className="px-4 py-3">
+                  {row.amount}
+                  </td>
+                  <td className="py-3">
+                    <span
+                      className={`px-1.5 py-1 rounded-full font-medium ${
+                        row.status === "Success"
+                          ? "bg-green-100 text-green-700"
+                          : "bg-red-100 text-red-700"
+                      }`}
+                    >
+                        {row.status}
+                    </span>
+                  </td>
+                </>
+              : 
+                <>
+                  <td className="px-4 py-3">
+                  {row.activity}
+                  </td>
+                  <td className="px-4 py-3">
+                  {row.refNo}
+                  </td>
+                  <td className="px-4 py-3">
+                  {row.amount}
+                  </td>
+                  <td className="px-4 py-3">
+                  {row.modeOfPayment}
+                  </td>
+                  <td className="px-4 py-3 text-sm">
+                    <span
+                        className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
+                        row.status === "Success"
+                            ? "bg-green-100 text-green-700"
+                            : "bg-red-100 text-red-700"
+                        }`}
+                    >
+                        {row.status}
+                    </span>
+                  </td>
+                </>
+              }
+                
             </tr>
           ))}
         </>

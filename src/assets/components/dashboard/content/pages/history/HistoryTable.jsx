@@ -11,11 +11,7 @@ const HistoryTable = ({data,queryState,filtered,
 
     return (
         <>
-        <div className={`grid grid-rows-[auto_1fr] gap-2 bg-white rounded-lg ${
-            overviewMode
-            ? "p-2"
-            : "p-5"
-        }`}>
+        <div className={`grid grid-rows-[auto_1fr] gap-2 bg-white rounded-lg p-5`}>
             
             <div className="row-start-1 grid md:grid-cols-2 max-md:grid-rows-2">
 

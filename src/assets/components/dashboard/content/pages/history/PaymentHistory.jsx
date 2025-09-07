@@ -20,6 +20,14 @@ const sampleData7 = [
     drawDate: "Aug 17, 2025",
     status: "Failed",
   },
+  {
+    id: 1244235,
+    amount: "₱100",
+    dateOfPayment: "Aug 15, 2025",
+    game: "6/45",
+    drawDate: "Aug 19, 2025",
+    status: "Successful",
+  },
 ];
 const PaymentHistory = ({overviewMode}) => {
   //const [query, setQuery] = useState("");
@@ -50,7 +58,7 @@ const PaymentHistory = ({overviewMode}) => {
         <div className="grid items-center">
           <span className={`font-semibold text-gray-800 font-sans ${
             overviewMode
-            ?"text-xs"
+            ?"md:text-xs text-lg"
             :"text-lg"
           }`}>
             Payment History
@@ -101,12 +109,10 @@ const PaymentHistory = ({overviewMode}) => {
                 overviewMode ? null:" px-4"
               }`}>
                 <span
-                  className={`px-1.5 py-1 rounded-full font-medium ${
+                  className={`px-[0.2rem] py-1 rounded-full font-medium ${
                     row.status === "Successful"
                       ? "bg-green-100 text-green-700"
                       : "bg-red-100 text-red-700"
-                  } ${
-                    overviewMode ? null:" text-xs"
                   }`}
                 >
                   {row.status}
