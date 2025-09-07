@@ -284,6 +284,11 @@ const Overview = () => {
                     </div>
                 </div>
             </ContentCell> */}
+            
+            <ContentCell className={"md:row-start-2 md:col-start-3 md:col-span-1 col-span-1"}>
+                <BalanceHistory overviewMode={true}/>
+            </ContentCell>
+
             <ContentCell className={"md:row-start-2 md:col-span-2 col-span-1"}>
                 <PaymentHistory overviewMode={true}/>
             </ContentCell>
