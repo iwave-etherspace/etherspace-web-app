@@ -5,9 +5,9 @@ import BalanceHistory from './history/BalanceHistory'
 import RadioButtonGroup from '../../side/sidebar-components/RadioButtonGroup'
 import RadioButton from '../../side/sidebar-components/RadioButton'
 
-const MyAccount = () => {
+const Account = () => {
     const activeMyAccountContentState = useState('');
-    const group = "myaccount";
+    const group = "account";
 
     const accountNavButtonColors={
         blank:"bg-white"
@@ -22,7 +22,7 @@ const MyAccount = () => {
                         <RadioButtonGroup activeContentState={activeMyAccountContentState} group={group} label={"Menu"} buttonColors={accountNavButtonColors}>
                             <RadioButton value={"Overview"}/>
                             <RadioButton value={"History"}/>
-                            <RadioButton value={"MyAccount"}/>
+                            <RadioButton value={"My Account"}/>
                         </RadioButtonGroup>
                     </nav>
                 </ContentCell>
@@ -36,4 +36,4 @@ const MyAccount = () => {
     )
 }
 
-export default MyAccount
+export default Account

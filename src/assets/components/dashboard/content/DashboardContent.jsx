@@ -4,7 +4,7 @@ import WelcomeSection from './content-component/WelcomeSection'
 import MainContent from './content-component/MainContent'
 import Overview from './pages/Overview'
 import History from './pages/History'
-import MyAccount from './pages/MyAccount'
+import Account from './pages/Account'
 
 
 const DashboardContent = ({activeContent,firstName,lastName,userContact,profileImage}) => {
@@ -14,7 +14,7 @@ const DashboardContent = ({activeContent,firstName,lastName,userContact,profileI
         <WelcomeSection firstName={firstName}/>
         {activeContent=="Overview" ? <Overview/>:null}
         {activeContent=="History" ? <History/>:null}
-        {activeContent=="MyAccount" ? <MyAccount/>:null}
+        {activeContent=="Account" ? <Account/>:null}
     </main>
   )
 }
