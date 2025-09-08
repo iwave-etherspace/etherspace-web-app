@@ -15,14 +15,14 @@ const Account = () => {
 
     return (
         <MainContent>
-            <div className="h-full grid grid-flow-col md:grid-cols-[10rem_7fr] content-start gap-4 bg-white rounded-lg">
+            <div className="h-full grid grid-flow-col md:grid-cols-[8rem_7fr] content-start gap-4 bg-white rounded-lg p-5">
 
                 <ContentCell className={"md:col-start-1 md:col-span-1 col-span-1"}>
                     <nav className="grid grid-cols-1 place-items-start max-md:mt-[1.5rem]">
-                        <RadioButtonGroup activeContentState={activeMyAccountContentState} group={group} label={"Menu"} buttonColors={accountNavButtonColors}>
-                            <RadioButton value={"Overview"}/>
-                            <RadioButton value={"History"}/>
+                        <RadioButtonGroup activeContentState={activeMyAccountContentState} group={group} label={"Account Settings"} buttonColors={accountNavButtonColors}>
                             <RadioButton value={"My Account"}/>
+                            <RadioButton value={"My Bank"}/>
+                            <RadioButton value={"Security"}/>
                         </RadioButtonGroup>
                     </nav>
                 </ContentCell>
