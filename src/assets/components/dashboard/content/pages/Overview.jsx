@@ -5,13 +5,13 @@ import PaymentHistory from './history/PaymentHistory'
 import BalanceHistory from './history/BalanceHistory'
 import BalanceCard from './overview/BalanceCard'
 import LotterySection from './overview/LotterySection'
-import TicketModal from './history/TicketModal'
+
 
 const Overview = () => {
-    const [ticketModalIsOpen,setTicketModalIsOpen] = useState(false);
+    
     return (
         <MainContent>
-            <TicketModal modalIsOpen={ticketModalIsOpen} setModalIsOpen={setTicketModalIsOpen} />
+            
             <div className="h-full grid md:grid-cols-5 grid-cols-1 md:grid-rows-[repeat(2,auto)] max-md:grid-flow-row content-start gap-4">
 
                 <ContentCell className={"md:row-start-1 md:col-start-1 md:col-span-2 col-span-1"}>
@@ -25,7 +25,7 @@ const Overview = () => {
                 </ContentCell>
 
                 <ContentCell className={"md:row-start-2 md:col-start-1 md:col-span-3 col-span-1"}>
-                    <PaymentHistory setTicketModalIsOpen={setTicketModalIsOpen} overviewMode={true}/>
+                    <PaymentHistory overviewMode={true}/>
                 </ContentCell>
 
             </div>

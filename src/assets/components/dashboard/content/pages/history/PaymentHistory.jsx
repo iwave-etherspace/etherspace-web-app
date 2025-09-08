@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, memo } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 
 import HistoryTable from "./HistoryTable";
@@ -22,7 +22,7 @@ const sampleData7 = [
     status: "Failed",
   },
   {
-    id: 1244235,
+    id: 1244237,
     amount: "₱100",
     dateOfPayment: "Aug 15, 2025",
     game: "6/45",
@@ -30,7 +30,9 @@ const sampleData7 = [
     status: "Successful",
   },
 ];
-const PaymentHistory = ({setTicketModalIsOpen,overviewMode}) => {
+
+
+const PaymentHistory = (({overviewMode}) => {
   //const [query, setQuery] = useState("");
   const queryState = useState("");
   const query = queryState[0];
@@ -50,10 +52,16 @@ const PaymentHistory = ({setTicketModalIsOpen,overviewMode}) => {
       ].some((val) => val.toString().toLowerCase().includes(q))
     );
   }, [query]);
+  
+  const [showTicket, setShowTicket] = useState({enabled:false,id:""});
 
-  
-  
   return (
+  <>
+    {/* TODO: stop whole PaymentHistory component from rerendering each time user opens a Modal */}
+    <TicketModal showTicket={showTicket} onClose={()=>setShowTicket({enabled:false,id:""})}/>
+
+    {console.log("rendering PaymentHistory")}
+
     <HistoryTable data={sampleData7} queryState={queryState} filtered={filtered}
       id={"paymenthistory"} 
       overviewMode={overviewMode}
@@ -96,7 +104,7 @@ const PaymentHistory = ({setTicketModalIsOpen,overviewMode}) => {
         <>
           {filtered.map((row) => (
             <tr 
-              key={row.id} 
+              key={row.id} //make sure to have unique key value
               className={`odd:bg-white even:bg-gray-50 text-gray-900 font-medium ${
                 overviewMode ? " text-[0.5rem]":" text-xs"
               }`}
@@ -124,10 +132,10 @@ const PaymentHistory = ({setTicketModalIsOpen,overviewMode}) => {
               <td className={`py-3 ${
                 overviewMode ? null:" px-4"
               }`}>
-                <button className={`px-3 py-1 rounded-md bg-green-100 text-green-700 hover:bg-green-200 font-medium ${
+                <button onClick={(e)=>setShowTicket({enabled:true,id:row.id})}
+                className={`px-3 py-1 rounded-md bg-green-100 text-green-700 hover:bg-green-200 font-medium ${
                   overviewMode ? " text-[0.5rem]":" text-xs"
                 }`}
-                onClick={()=>setTicketModalIsOpen(true)}
                 >
                   View
                 </button>
@@ -177,7 +185,8 @@ const PaymentHistory = ({setTicketModalIsOpen,overviewMode}) => {
               </div>
 
 
-              <button className="w-full bg-green-100 text-green-700 font-medium py-2 rounded-full mt-3 hover:bg-green-200">
+              <button onClick={(e)=>setShowTicket({enabled:true,id:row.id})}
+              className="w-full bg-green-100 text-green-700 font-medium py-2 rounded-full mt-3 hover:bg-green-200">
                 View
               </button>
             </div>
@@ -185,6 +194,8 @@ const PaymentHistory = ({setTicketModalIsOpen,overviewMode}) => {
         </>
       }
     />
+    
+  </>
   );
-}
+});
 export default PaymentHistory;
