@@ -4,9 +4,13 @@ import ContentCell from '../content-component/maincontent/ContentCell'
 import BalanceHistory from './history/BalanceHistory'
 import RadioButtonGroup from '../../side/sidebar-components/RadioButtonGroup'
 import RadioButton from '../../side/sidebar-components/RadioButton'
+import MyAccount from './account/MyAccount'
+import MyBank from './account/MyBank'
+import Security from './account/Security'
 
 const Account = () => {
-    const activeMyAccountContentState = useState('');
+    const activeAccountContentState = useState('');
+    const activeAccountContent = activeAccountContentState[0];
     const group = "account";
 
     const accountNavButtonColors={
@@ -19,7 +23,7 @@ const Account = () => {
 
                 <ContentCell className={"md:col-start-1 md:col-span-1 col-span-1"}>
                     <nav className="grid grid-cols-1 place-items-start max-md:mt-[1.5rem]">
-                        <RadioButtonGroup activeContentState={activeMyAccountContentState} group={group} label={"Account Settings"} buttonColors={accountNavButtonColors}>
+                        <RadioButtonGroup activeContentState={activeAccountContentState} group={group} label={"Account Settings"} buttonColors={accountNavButtonColors}>
                             <RadioButton value={"My Account"}/>
                             <RadioButton value={"My Bank"}/>
                             <RadioButton value={"Security"}/>
@@ -28,7 +32,9 @@ const Account = () => {
                 </ContentCell>
 
                 <ContentCell className={"md:col-start-2 md:col-span-1 col-span-1"}>
-                    ACCOUNT
+                    {activeAccountContent==="My Account" ? <MyAccount/>:null}
+                    {activeAccountContent==="My Bank" ? <MyBank/>:null}
+                    {activeAccountContent==="Security" ? <Security/>:null}
                 </ContentCell>
 
             </div>
