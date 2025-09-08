@@ -9,7 +9,7 @@ import MyBank from './account/MyBank'
 import Security from './account/Security'
 
 const Account = () => {
-    const activeAccountContentState = useState('');
+    const activeAccountContentState = useState('My Account');
     const activeAccountContent = activeAccountContentState[0];
     const group = "account";
 
