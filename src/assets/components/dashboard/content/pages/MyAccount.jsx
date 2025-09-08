@@ -1,21 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MainContent from '../content-component/MainContent'
 import ContentCell from '../content-component/maincontent/ContentCell'
 import BalanceHistory from './history/BalanceHistory'
+import RadioButtonGroup from '../../side/sidebar-components/RadioButtonGroup'
+import RadioButton from '../../side/sidebar-components/RadioButton'
 
 const MyAccount = () => {
-  return (
-    <MainContent>
-        <div className="h-full grid grid-flow-row content-start gap-4">
+    const activeMyAccountContentState = useState('');
+    const group = "myaccount";
 
-            <ContentCell>
-                MY 
-            </ContentCell>
+    const accountNavButtonColors={
+        blank:"bg-white"
+    }
 
-            <ContentCell>ACCOUNT</ContentCell>
-        </div>
-    </MainContent>
-  )
+    return (
+        <MainContent>
+            <div className="h-full grid grid-flow-col md:grid-cols-[10rem_7fr] content-start gap-4 bg-white rounded-lg">
+
+                <ContentCell className={"md:col-start-1 md:col-span-1 col-span-1"}>
+                    <nav className="grid grid-cols-1 place-items-start max-md:mt-[1.5rem]">
+                        <RadioButtonGroup activeContentState={activeMyAccountContentState} group={group} label={"Menu"} buttonColors={accountNavButtonColors}>
+                            <RadioButton value={"Overview"}/>
+                            <RadioButton value={"History"}/>
+                            <RadioButton value={"MyAccount"}/>
+                        </RadioButtonGroup>
+                    </nav>
+                </ContentCell>
+
+                <ContentCell className={"md:col-start-2 md:col-span-1 col-span-1"}>
+                    ACCOUNT
+                </ContentCell>
+
+            </div>
+        </MainContent>
+    )
 }
 
 export default MyAccount

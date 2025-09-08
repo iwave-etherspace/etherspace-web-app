@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import RadioButton from './RadioButton'
 
-const RadioButtonGroup = ({activeContentState,group,label,children}) => {
+const RadioButtonGroup = ({
+  buttonColors,
+  activeContentState,group,label,children}) => {
+
   let childrenWithProperties = React.Children.map(children, child => {
+    
     if (React.isValidElement(child)) {
-      return React.cloneElement(child, { activeContentState,group });
+      return React.cloneElement(child, { 
+        activeContentState:activeContentState,
+        group:group,
+        buttonColors:buttonColors
+      });
     }
     return child;
   });
