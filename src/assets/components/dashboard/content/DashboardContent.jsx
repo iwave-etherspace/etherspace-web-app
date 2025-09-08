@@ -3,7 +3,7 @@ import HeaderBar from './content-component/HeaderBar'
 import WelcomeSection from './content-component/WelcomeSection'
 import MainContent from './content-component/MainContent'
 import Overview from './pages/Overview'
-import HistoryPage from './pages/HistoryPage'
+import History from './pages/History'
 
 
 const DashboardContent = ({activeContent,firstName,lastName,userContact,profileImage}) => {
@@ -12,7 +12,7 @@ const DashboardContent = ({activeContent,firstName,lastName,userContact,profileI
         <HeaderBar userName={firstName+" "+lastName} userContact={userContact} src={profileImage}/>
         <WelcomeSection firstName={firstName}/>
         {activeContent=="Overview" ? <Overview/>:null}
-        {activeContent=="History" ? <HistoryPage/>:null}
+        {activeContent=="History" ? <History/>:null}
     </main>
   )
 }

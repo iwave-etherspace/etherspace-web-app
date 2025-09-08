@@ -6,7 +6,7 @@ import PaymentHistory from './history/PaymentHistory'
 
 
 
-const HistoryPage = () => {
+const History = () => {
   return (
     <MainContent>
         <div className="h-full grid grid-flow-row content-start gap-4">
@@ -21,4 +21,4 @@ const HistoryPage = () => {
   )
 }
 
-export default HistoryPage
+export default History
