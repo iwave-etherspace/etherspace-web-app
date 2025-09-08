@@ -7,8 +7,7 @@ const RadioButton = ({
   let activeContent = activeContentState[0];
   let setActiveContent = activeContentState[1];
   const actualId = group+value;
-  console.log("buttonColors buttonColors: ",buttonColors);
-  console.log("buttonColors buttonColors.blank: ",buttonColors?.blank);
+  
   return (
     <div className ="w-full">
         <input type="radio" checked={value === activeContent} onChange={e => setActiveContent(e.target.value)} name={group} value={value} id={actualId} className="hidden peer"/>
