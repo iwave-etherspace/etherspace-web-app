@@ -1,11 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthProvider, AuthContext } from "react-oauth2-code-pkce";
 import BgImage from "/public/backGroundPic.png";
 import Logo from "/public/logoWhite.png";
 import LogoColored from "/public/logoColored.png";
 import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
-  const navigate = useNavigate(); // to be remove, temporary for demo
+  const navigate = useNavigate();
+  const { logIn } = useContext(AuthContext);
+
+  const handleLogin = () => {
+    // First, let's see what URL logIn() would generate
+    console.log("About to open login in new tab...");
+
+    // Instead of calling logIn(), we'll manually create the OAuth URL
+    const authUrl =
+      `http://localhost:9000/auth/oauth2/authorize?` +
+      `response_type=code&` +
+      `client_id=${import.meta.env.VITE_OAUTH_CLIENT_ID}&` +
+      `redirect_uri=${encodeURIComponent(import.meta.env.VITE_OAUTH_REDIRECT_URI)}&` +
+      `scope=${import.meta.env.VITE_OAUTH_SCOPE}&` +
+      `state=${Math.random().toString(36).substring(2, 15)}`;
+
+    console.log("Opening URL in new tab:", authUrl);
+
+    // Open in new tab
+    window.open(authUrl, "_blank", "width=500,height=600");
+  };
+
+  // Also log on component mount to see initial state
+  React.useEffect(() => {
+    console.log("RegisterPage mounted. Current URL:", window.location.href);
+    console.log("Auth context available in useEffect:", !!logIn);
+  }, [logIn]);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 h-screen ">
@@ -56,7 +83,7 @@ const RegisterPage = () => {
               className="w-full px-4 py-2 bg-orange-600 text-white rounded-lg shadow 
                          hover:bg-orange-700 focus:outline-none focus:ring-2 
                          focus:ring-orange-400 transition"
-              onClick={() => navigate("/loginWPassword")} //Temporary for demo
+              onClick={() => handleLogin()} //Temporary for demo
             >
               Log in with Password
             </button>
