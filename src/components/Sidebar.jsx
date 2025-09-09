@@ -1,4 +1,3 @@
-// components/Sidebar.jsx
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import {
@@ -10,6 +9,7 @@ import {
   QuestionMarkCircleIcon,
   ArrowLeftOnRectangleIcon,
 } from "@heroicons/react/24/outline";
+import EtherSpaceLogo from './EtherSpaceLogo'
 
 const Sidebar = ({ isCollapsed, toggleSidebar, isSidebarOpen }) => {
   const navigate = useNavigate();
