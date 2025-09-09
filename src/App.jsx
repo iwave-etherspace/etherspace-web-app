@@ -16,15 +16,23 @@ function App() {
       <Route path="/" element={<RegisterPage />} />
       <Route path="/otpPage" element={<OtpPage />} />
       <Route path="/loginWpassword" element={<RegisterWithPasswordPage />} />
-      <Route path="/accountSetupPage" element={<AccountSetupPage />} />
       <Route path="/callback" element={<Callback />} />
 
-      {/* Only dashboard is protected */}
+      {/* Protected */}
       <Route
         path="/dashboard"
         element={
           <ProtectedRoute>
             <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/accountSetupPage"
+        element={
+          <ProtectedRoute>
+            <AccountSetupPage />
           </ProtectedRoute>
         }
       />

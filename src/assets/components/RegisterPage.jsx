@@ -10,29 +10,8 @@ const RegisterPage = () => {
   const { logIn } = useContext(AuthContext);
 
   const handleLogin = () => {
-    // First, let's see what URL logIn() would generate
-    console.log("About to open login in new tab...");
-
-    // Instead of calling logIn(), we'll manually create the OAuth URL
-    const authUrl =
-      `http://localhost:9000/auth/oauth2/authorize?` +
-      `response_type=code&` +
-      `client_id=${import.meta.env.VITE_OAUTH_CLIENT_ID}&` +
-      `redirect_uri=${encodeURIComponent(import.meta.env.VITE_OAUTH_REDIRECT_URI)}&` +
-      `scope=${import.meta.env.VITE_OAUTH_SCOPE}&` +
-      `state=${Math.random().toString(36).substring(2, 15)}`;
-
-    console.log("Opening URL in new tab:", authUrl);
-
-    // Open in new tab
-    window.open(authUrl, "_blank", "width=500,height=600");
+    logIn();
   };
-
-  // Also log on component mount to see initial state
-  React.useEffect(() => {
-    console.log("RegisterPage mounted. Current URL:", window.location.href);
-    console.log("Auth context available in useEffect:", !!logIn);
-  }, [logIn]);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 h-screen ">
