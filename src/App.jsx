@@ -21,7 +21,7 @@ function App() {
         {/* Routes with sidebar and header */}
         <Route path="/" element={<Layout><Overview /></Layout>} />
         <Route path="/history" element={<Layout><History /></Layout>} />
-        <Route path="/account" element={<Layout><Account /></Layout>} />
+        <Route path="/account/*" element={<Layout><Account /></Layout>} />
         <Route path="/general" element={<Layout><General /></Layout>} />
         <Route path="/settings" element={<Layout><Settings /></Layout>} />
         <Route path="/help" element={<Layout><Help /></Layout>} />
