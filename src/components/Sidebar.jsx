@@ -10,6 +10,7 @@ import {
   ArrowLeftOnRectangleIcon,
 } from "@heroicons/react/24/outline";
 import EtherSpaceLogo from './EtherSpaceLogo'
+import LogoutButton from './LogoutButton';
 
 const Sidebar = ({ isCollapsed, toggleSidebar, isSidebarOpen }) => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Sidebar = ({ isCollapsed, toggleSidebar, isSidebarOpen }) => {
     {
       name: "Overview",
       icon: <HomeIcon className="h-5 w-5" />,
-      path: "/",
+      path: "/dashboard",
     },
     {
       name: "History",
@@ -105,17 +106,7 @@ const Sidebar = ({ isCollapsed, toggleSidebar, isSidebarOpen }) => {
       </div>
 
       <div className="p-4 border-t border-gray-200">
-        <button
-          onClick={handleLogout}
-          className={`flex items-center w-full p-2 rounded-md hover:bg-gray-200 text-gray-700 ${
-            isCollapsed ? 'justify-center' : ''
-          }`}
-        >
-          <div className="flex items-center justify-center w-6 h-6">
-            <ArrowLeftOnRectangleIcon className="h-5 w-5" />
-          </div>
-          {!isCollapsed && <span className="ml-2 text-sm">Log Out</span>}
-        </button>
+        <LogoutButton />
         
         {!isCollapsed && (
           <div className="mt-4 text-xs text-gray-500 text-center">

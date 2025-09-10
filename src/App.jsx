@@ -1,6 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./layout/Layout";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider } from "react-oauth2-code-pkce";
+import ProtectedLayout from "./layout/ProtectedLayout";
 import AuthLayout from './layout/AuthLayout'
 
 import Overview from "./pages/Overview/Overview";
@@ -11,25 +12,44 @@ import Help from "./pages/Help/Help";
 
 import OtpPage from './pages/Registration/OtpPage'
 import RegisterPage from './pages/Registration/RegisterPage'
-import RegisterWithPasswordPage from './pages/Registration/RegisterWithPasswordPage'
+import Callback from './pages/Registration/Callback';
 
 function App() {
+  const authConfig = {
+    clientId: import.meta.env.VITE_OAUTH_CLIENT_ID,
+    authorizationEndpoint: import.meta.env.VITE_OAUTH_AUTHORIZATION_ENDPOINT,
+    tokenEndpoint: import.meta.env.VITE_OAUTH_TOKEN_ENDPOINT,
+    redirectUri: import.meta.env.VITE_OAUTH_REDIRECT_URI,
+    scope: import.meta.env.VITE_OAUTH_SCOPE,
+    extraTokenParameters: {
+      response_type: 'code'
+    },
+    autoLogin: false,
+  };
+
   return (
-    <Router>
-      <Routes>
-        {/* Routes with sidebar and header */}
-        <Route path="/" element={<Layout><Overview /></Layout>} />
-        <Route path="/history" element={<Layout><History /></Layout>} />
-        <Route path="/account/*" element={<Layout><Account /></Layout>} />
-        <Route path="/settings" element={<Layout><Settings /></Layout>} />
-        <Route path="/help" element={<Layout><Help /></Layout>} />
-        
-        {/* Routes without sidebar and header */}
-        <Route path="/otp" element={<AuthLayout><OtpPage /></AuthLayout>} />
-        <Route path="/register-page" element={<AuthLayout><RegisterPage /></AuthLayout>} />
-        <Route path="/register-with-password" element={<AuthLayout><RegisterWithPasswordPage /></AuthLayout>} />
-      </Routes>
-    </Router>
+    <AuthProvider authConfig={authConfig}>
+      <Router>
+        <Routes>
+          {/* Public routes */}
+          <Route path="/otp" element={<AuthLayout><OtpPage /></AuthLayout>} />
+          <Route path="/" element={<AuthLayout><RegisterPage /></AuthLayout>} />
+          <Route path="/callback" element={<Callback />} />
+          
+          {/* Protected routes - All routes under ProtectedLayout */}
+          <Route element={<ProtectedLayout />}>
+            <Route path="/dashboard" element={<Overview />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/account/*" element={<Account />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/help" element={<Help />} />
+          </Route>
+          
+          {/* Catch-all route for 404 */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 

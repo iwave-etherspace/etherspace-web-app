@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AuthProvider, AuthContext } from "react-oauth2-code-pkce";
+import { AuthContext } from "react-oauth2-code-pkce";
 import BgImage from "/public/backGroundPic.png";
 import Logo from "/public/logoWhite.png";
 import LogoColored from "/public/logoColored.png";
@@ -7,11 +7,30 @@ import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
   const navigate = useNavigate();
-  const { logIn } = useContext(AuthContext);
+  const { token, loginInProgress, logIn } = useContext(AuthContext);
+
+  // If user is already authenticated, redirect to dashboard
+  React.useEffect(() => {
+    if (token) {
+      navigate("/dashboard", { replace: true });
+    }
+  }, [token, navigate]);
 
   const handleLogin = () => {
     logIn();
   };
+
+  // Show loading state if login is in progress
+  if (loginInProgress) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-900 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Redirecting to login...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 h-screen ">
@@ -43,7 +62,7 @@ const RegisterPage = () => {
               className="w-full px-4 py-2 bg-blue-900 text-white rounded-lg shadow 
                          hover:bg-blue-600 focus:outline-none focus:ring-2 
                          focus:ring-blue-400 transition"
-              onClick={() => navigate("/otpPage")} //Temporary for demo
+              onClick={() => navigate("/otp")}
             >
               Continue
             </button>
@@ -62,9 +81,10 @@ const RegisterPage = () => {
               className="w-full px-4 py-2 bg-orange-600 text-white rounded-lg shadow 
                          hover:bg-orange-700 focus:outline-none focus:ring-2 
                          focus:ring-orange-400 transition"
-              onClick={() => handleLogin()} //Temporary for demo
+              onClick={handleLogin}
+              disabled={loginInProgress}
             >
-              Log in with Password
+              {loginInProgress ? 'Redirecting...' : 'Log in with Password'}
             </button>
           </div>
         </div>
