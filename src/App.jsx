@@ -6,7 +6,6 @@ import AuthLayout from './layout/AuthLayout'
 import Overview from "./pages/Overview/Overview";
 import History from "./pages/History/History";
 import Account from "./pages/Accounts/Account";
-import General from "./pages/General/General";
 import Settings from "./pages/Settings/Settings";
 import Help from "./pages/Help/Help";
 
@@ -22,7 +21,6 @@ function App() {
         <Route path="/" element={<Layout><Overview /></Layout>} />
         <Route path="/history" element={<Layout><History /></Layout>} />
         <Route path="/account/*" element={<Layout><Account /></Layout>} />
-        <Route path="/general" element={<Layout><General /></Layout>} />
         <Route path="/settings" element={<Layout><Settings /></Layout>} />
         <Route path="/help" element={<Layout><Help /></Layout>} />
         

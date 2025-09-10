@@ -31,11 +31,6 @@ const Sidebar = ({ isCollapsed, toggleSidebar, isSidebarOpen }) => {
       path: "/account",
     },
     {
-      name: "General",
-      icon: <CogIcon className="h-5 w-5" />,
-      path: "/general",
-    },
-    {
       name: "Dashboard Settings",
       icon: <ChartBarIcon className="h-5 w-5" />,
       path: "/settings",
